@@ -18,9 +18,13 @@ vim.api.nvim_create_autocmd("LspAttach", {
 		vim.keymap.set("n", "gD", ":vsplit<cr> :lua vim.lsp.buf.definition()<cr>", opts)
 		vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 		vim.keymap.set("n", "<leader>li", vim.lsp.buf.implementation, opts)
-		vim.keymap.set("n", "<space>ld", vim.lsp.buf.type_definition, opts)
+		vim.keymap.set("n", "<space>ld", vim.diagnostic.open_float, opts)
 		vim.keymap.set("n", "<leader>lr", vim.lsp.buf.rename, opts)
 		vim.keymap.set({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, opts)
 		vim.keymap.set("n", "<leader>lr", vim.lsp.buf.references, opts)
 	end,
+})
+
+vim.diagnostic.config({
+	float = { border = "rounded" },
 })
