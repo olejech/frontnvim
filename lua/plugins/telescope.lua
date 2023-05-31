@@ -1,4 +1,6 @@
 local actions = require("telescope.actions")
+local lga_actions = require("telescope-live-grep-args.actions")
+
 require("telescope").setup({
 	defaults = {
 		layout_config = {
@@ -11,6 +13,7 @@ require("telescope").setup({
 			i = {
 				["<C-n>"] = actions.cycle_history_next,
 				["<C-p>"] = actions.cycle_history_prev,
+				["<C-k>"] = lga_actions.quote_prompt(),
 			},
 		},
 	},
