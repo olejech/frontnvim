@@ -38,3 +38,6 @@ cmd("ColorScheme", {
 	desc = "Avoid overwritten by loading color schemes later",
 	callback = set_hl_for_floating_window,
 })
+
+-- disable set comment on new line
+vim.cmd("autocmd BufEnter * set formatoptions-=cro")
