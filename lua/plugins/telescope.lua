@@ -15,7 +15,6 @@ require("telescope").setup({
 				["<C-p>"] = actions.cycle_history_prev,
 				["<C-k>"] = lga_actions.quote_prompt(),
 				["|"] = actions.select_vertical,
-				["\\"] = actions.select_horizontal,
 			},
 			n = {
 				["|"] = actions.select_vertical,
