@@ -15,6 +15,7 @@ null_ls.setup({
 				"yaml",
 				"markdown",
 				"graphql",
+				"typescript",
 				"typescriptreact",
 				"tsx",
 			},
