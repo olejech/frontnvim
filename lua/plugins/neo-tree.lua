@@ -18,4 +18,5 @@ require("neo-tree").setup({
 	filesystem = {
 		follow_current_file = true,
 	},
+	hide_root_node = true,
 })
