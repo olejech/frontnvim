@@ -41,3 +41,7 @@ cmd("ColorScheme", {
 
 -- disable set comment on new line
 vim.cmd("autocmd BufEnter * set formatoptions-=cro")
+
+-- show recording macros status
+vim.cmd("autocmd RecordingEnter * set cmdheight=1")
+vim.cmd("autocmd RecordingLeave * set cmdheight=0")
