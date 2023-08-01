@@ -32,15 +32,12 @@ vim.keymap.set("n", "gr", builtin.lsp_references, { noremap = true, silent = tru
 vim.keymap.set("n", "gd", builtin.lsp_definitions, { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>gb", "<cmd>Telescope git_bcommits<cr>")
 vim.keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>")
+vim.keymap.set("n", "<leader>fr", builtin.resume)
+vim.keymap.set("n", "<leader>fn", "<cmd>:cnext<cr>")
+vim.keymap.set("n", "<leader>fp", "<cmd>:cprevious<cr>")
 
 -- Neotree
 vim.keymap.set("n", "<leader>e", ":Neotree float toggle reveal<CR>")
-
--- Comment
-vim.keymap.set("n", "<leader>/", function()
-	require("Comment.api").toggle.linewise.count(vim.v.count > 0 and vim.v.count or 1)
-end)
-vim.keymap.set("v", "<leader>/", "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>")
 
 -- Gitsigns
 vim.keymap.set("n", "]g", gitsigns.next_hunk)
