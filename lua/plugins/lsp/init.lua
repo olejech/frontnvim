@@ -15,6 +15,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 		local opts = { buffer = ev.buf }
 		vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+		vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, opts)
 		vim.keymap.set("n", "gD", ":vsplit<cr> :lua vim.lsp.buf.definition()<cr>", opts)
 		vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
 		vim.keymap.set("n", "<leader>li", vim.lsp.buf.implementation, opts)

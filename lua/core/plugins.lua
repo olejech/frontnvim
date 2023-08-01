@@ -54,6 +54,7 @@ require("lazy").setup({
 	{ "ThePrimeagen/harpoon", event = "VeryLazy" },
 	{ "folke/todo-comments.nvim" },
 	{ "Bryley/neoai.nvim" },
+	{ "dmmulroy/tsc.nvim", event = "BufEnter" },
 }, {
 	defaults = {
 		lazy = true,
