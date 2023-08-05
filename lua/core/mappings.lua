@@ -30,7 +30,19 @@ vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 vim.keymap.set("n", "<leader>fc", builtin.grep_string)
 vim.keymap.set("n", "gr", builtin.lsp_references, { noremap = true, silent = true })
 vim.keymap.set("n", "gd", builtin.lsp_definitions, { noremap = true, silent = true })
-vim.keymap.set("n", "<leader>gb", "<cmd>Telescope git_bcommits<cr>")
+vim.keymap.set("n", "<leader>gb", function()
+	builtin.git_bcommits({
+		use_file_path = true,
+		git_command = {
+			"git",
+			"log",
+			-- "--date=format:%y/%m/%d",
+			-- "--pretty=C(auto)%d (%cr) %cn %s",
+			"--pretty=%h %s <%cn> (%cr)",
+			"--follow",
+		},
+	})
+end)
 vim.keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>")
 vim.keymap.set("n", "<leader>fr", builtin.resume)
 vim.keymap.set("n", "<leader>fn", "<cmd>:cnext<cr>")
