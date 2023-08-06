@@ -24,12 +24,13 @@ require("lazy").setup({
 	},
 	{ "nvim-treesitter/nvim-treesitter", dependencies = { "JoosepAlviste/nvim-ts-context-commentstring" } },
 	{ "neovim/nvim-lspconfig", event = "InsertEnter" },
-	{ "hrsh7th/cmp-nvim-lsp" },
-	{ "hrsh7th/cmp-buffer" },
-	{ "hrsh7th/cmp-path" },
+	{ "hrsh7th/cmp-nvim-lsp", event = "InsertEnter" },
+	{ "hrsh7th/cmp-buffer", event = "BufEnter" },
+	{ "hrsh7th/cmp-path", event = "InsertEnter" },
 	{ "hrsh7th/cmp-cmdline", event = "BufEnter" },
-	{ "hrsh7th/nvim-cmp" },
-	{ "hrsh7th/vim-vsnip", event = "InsertEnter" },
+	{ "hrsh7th/nvim-cmp", event = "InsertEnter" },
+	{ "hrsh7th/vim-vsnip", event = "BufEnter" },
+	{ "hrsh7th/cmp-vsnip", event = "BufEnter" },
 	{
 		"williamboman/mason.nvim",
 		build = ":MasonUpdate",
@@ -55,12 +56,6 @@ require("lazy").setup({
 	{ "folke/todo-comments.nvim" },
 	{ "Bryley/neoai.nvim" },
 	{ "dmmulroy/tsc.nvim", event = "BufEnter" },
-	{
-		"L3MON4D3/LuaSnip",
-		version = "2.*",
-		build = "make install_jsregexp",
-		event = "InsertEnter",
-	},
 }, {
 	defaults = {
 		lazy = true,

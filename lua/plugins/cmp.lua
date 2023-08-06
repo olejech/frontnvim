@@ -23,15 +23,7 @@ cmp.setup({
 	sources = cmp.config.sources({
 		{ name = "nvim_lsp", max_item_count = 20 },
 		{ name = "vsnip" }, -- For vsnip users.
-	}, {
 		{ name = "buffer" },
-	}),
-})
-
--- Set configuration for specific filetype.
-cmp.setup.filetype("gitcommit", {
-	sources = cmp.config.sources({
-		{ name = "cmp_git" }, -- You can specify the `cmp_git` source if you were installed it.
 	}, {
 		{ name = "buffer" },
 	}),
@@ -54,3 +46,6 @@ cmp.setup.cmdline(":", {
 		{ name = "cmdline" },
 	}),
 })
+
+-- Set custom vsnip directory
+vim.g.vsnip_snippet_dir = "~/.config/nvim/lua/snippets"
