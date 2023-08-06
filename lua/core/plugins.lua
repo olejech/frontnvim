@@ -55,6 +55,12 @@ require("lazy").setup({
 	{ "folke/todo-comments.nvim" },
 	{ "Bryley/neoai.nvim" },
 	{ "dmmulroy/tsc.nvim", event = "BufEnter" },
+	{
+		"L3MON4D3/LuaSnip",
+		version = "2.*",
+		build = "make install_jsregexp",
+		event = "InsertEnter",
+	},
 }, {
 	defaults = {
 		lazy = true,

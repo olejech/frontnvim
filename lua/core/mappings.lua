@@ -5,6 +5,7 @@ local builtin = require("telescope.builtin")
 local harpoon_mark = require("harpoon.mark")
 local harpoon_ui = require("harpoon.ui")
 local todo = require("todo-comments")
+local lua_snip = require("luasnip")
 
 vim.g.mapleader = " "
 
@@ -36,8 +37,6 @@ vim.keymap.set("n", "<leader>gb", function()
 		git_command = {
 			"git",
 			"log",
-			-- "--date=format:%y/%m/%d",
-			-- "--pretty=C(auto)%d (%cr) %cn %s",
 			"--pretty=%h %s <%cn> (%cr)",
 			"--follow",
 		},
@@ -129,3 +128,6 @@ vim.keymap.set("n", "[t", todo.jump_prev)
 vim.keymap.set("n", "<leader>aa", ":NeoAI<cr>")
 vim.keymap.set("v", "<leader>ac", ":NeoAIContext<cr>")
 vim.keymap.set("v", "<leader>ai", ":NeoAIInjectContext")
+
+-- LuaSnip
+vim.keymap.set({ "i" }, "<C-s>", lua_snip.expand, { silent = true })
