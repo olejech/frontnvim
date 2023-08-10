@@ -7,6 +7,7 @@
   "cmp-vsnip": { "branch": "main", "commit": "989a8a73c44e926199bfd05fa7a516d51f2d2752" },
   "codeium.vim": { "branch": "main", "commit": "857d1754c070a8fd8c3658a37098314b53e10f37" },
   "dressing.nvim": { "branch": "master", "commit": "829bc80400651aea31b03d8fc9a99135512fe67a" },
+  "everforest": { "branch": "master", "commit": "83b666410d7ae0eccf96dbbe3b4b6ac5b8172d38" },
   "gitsigns.nvim": { "branch": "main", "commit": "5d73da785a3c05fd63ac31769079db05169a6ec7" },
   "harpoon": { "branch": "master", "commit": "21f4c47c6803d64ddb934a5b314dcb1b8e7365dc" },
   "jest.nvim": { "branch": "master", "commit": "1ec13b863512f3673116986e6d27dc49bc17b829" },

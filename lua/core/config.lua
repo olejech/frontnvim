@@ -1,3 +1,4 @@
+vim.opt.termguicolors = true
 vim.wo.number = true
 vim.wo.relativenumber = true
 vim.opt.showmode = false
