@@ -12,9 +12,11 @@ require("nvim-treesitter.configs").setup({
 		"html",
 		"css",
 		"scss",
+		"markdown_inline",
 	},
 	highlight = {
 		enable = true,
+		additional_vim_regex_highlighting = { "markdown" },
 	},
 	context_commentstring = {
 		enable = true,

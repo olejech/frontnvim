@@ -54,8 +54,12 @@ require("lazy").setup({
 	{ "Exafunction/codeium.vim", event = "InsertEnter" },
 	{ "ThePrimeagen/harpoon", event = "VeryLazy" },
 	{ "folke/todo-comments.nvim" },
-	{ "Bryley/neoai.nvim" },
+	{ "Bryley/neoai.nvim", event = "VeryLazy" },
 	{ "dmmulroy/tsc.nvim", event = "BufEnter" },
+	{
+		"renerocksai/telekasten.nvim",
+		dependencies = { "nvim-telescope/telescope.nvim" },
+	},
 }, {
 	defaults = {
 		lazy = true,

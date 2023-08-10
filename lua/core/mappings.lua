@@ -127,3 +127,11 @@ vim.keymap.set("n", "[t", todo.jump_prev)
 vim.keymap.set("n", "<leader>aa", ":NeoAI<cr>")
 vim.keymap.set("v", "<leader>ac", ":NeoAIContext<cr>")
 vim.keymap.set("v", "<leader>ai", ":NeoAIInjectContext")
+
+-- Telekasten
+vim.keymap.set("n", "<leader>zf", "<cmd>Telekasten find_notes<CR>")
+vim.keymap.set("n", "<leader>zw", "<cmd>Telekasten search_notes<CR>")
+vim.keymap.set("n", "<leader>zt", "<cmd>Telekasten goto_today<CR>")
+vim.keymap.set("n", "<leader>zd", "<cmd>Telekasten follow_link<CR>")
+vim.keymap.set("n", "<leader>zn", "<cmd>Telekasten new_note<CR>")
+vim.keymap.set("n", "<leader>zb", "<cmd>Telekasten show_backlinks<CR>")
