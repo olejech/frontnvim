@@ -61,6 +61,7 @@ require("lazy").setup({
 		dependencies = { "nvim-telescope/telescope.nvim" },
 	},
 	{ "sainnhe/everforest" },
+	{ "folke/neodev.nvim" },
 }, {
 	defaults = {
 		lazy = true,

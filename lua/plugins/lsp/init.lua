@@ -1,7 +1,10 @@
 local lspconfig = require("lspconfig")
 local tsserver = require("plugins.lsp.tsserver")
+local lua_ls = require("plugins.lsp.lua-ls")
 
 lspconfig.tsserver.setup(tsserver)
+lspconfig.lua_ls.setup(lua_ls)
+
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 

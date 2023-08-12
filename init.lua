@@ -6,6 +6,7 @@ require("core.mappings")
 
 require("plugins.neo-tree")
 require("plugins.treesitter")
+require("plugins.neodev")
 require("plugins.lsp")
 require("plugins.cmp")
 require("plugins.mason")
