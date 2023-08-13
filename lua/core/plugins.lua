@@ -62,6 +62,7 @@ require("lazy").setup({
 	},
 	{ "sainnhe/everforest" },
 	{ "folke/neodev.nvim" },
+	{ "echasnovski/mini.surround", version = "*" },
 }, {
 	defaults = {
 		lazy = true,
