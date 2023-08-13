@@ -1,3 +1,3 @@
 require("nvim-jest").setup({
-	jest_cmd = "yarn test",
+  jest_cmd = os.getenv("JEST_CMD")
 })
