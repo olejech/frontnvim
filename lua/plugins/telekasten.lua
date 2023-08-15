@@ -4,4 +4,6 @@ require("telekasten").setup({
   dailies = home .. "Daily",
   templates = home .. "Templates",
   template_new_note = home .. "Templates/NoteTelekastenTemplate.md",
+  sort = "modified",
+  show_tags_theme = "get_cursor"
 })
