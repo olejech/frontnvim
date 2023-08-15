@@ -31,15 +31,15 @@ vim.keymap.set("n", "<leader>fc", builtin.grep_string)
 vim.keymap.set("n", "gr", builtin.lsp_references, { noremap = true, silent = true })
 vim.keymap.set("n", "gd", builtin.lsp_definitions, { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>gb", function()
-	builtin.git_bcommits({
-		use_file_path = true,
-		git_command = {
-			"git",
-			"log",
-			"--pretty=%h %s <%cn> (%cr)",
-			"--follow",
-		},
-	})
+  builtin.git_bcommits({
+    use_file_path = true,
+    git_command = {
+      "git",
+      "log",
+      "--pretty=%h %s <%cn> (%cr)",
+      "--follow",
+    },
+  })
 end)
 vim.keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>")
 vim.keymap.set("n", "<leader>fr", builtin.resume)
@@ -53,7 +53,7 @@ vim.keymap.set("n", "<leader>e", ":Neotree float toggle reveal<CR>")
 vim.keymap.set("n", "]g", gitsigns.next_hunk)
 vim.keymap.set("n", "[g", gitsigns.prev_hunk)
 vim.keymap.set("n", "<leader>gl", function()
-	gitsigns.blame_line({ full = true })
+  gitsigns.blame_line({ full = true })
 end)
 vim.keymap.set("n", "<leader>gp", gitsigns.preview_hunk)
 vim.keymap.set("n", "<leader>gh", gitsigns.reset_hunk)
@@ -73,10 +73,10 @@ vim.keymap.set("n", "<leader>jf", "<cmd>JestFile<cr>")
 vim.keymap.set("n", "<C-s>k", "<cmd>resize -20<cr>")
 vim.keymap.set("n", "<C-s>j", "<cmd>resize +20<cr>")
 vim.keymap.set("n", "<C-s>h", function()
-	smart_splits.resize_left(40)
+  smart_splits.resize_left(40)
 end)
 vim.keymap.set("n", "<C-s>l", function()
-	smart_splits.resize_right(40)
+  smart_splits.resize_right(40)
 end)
 vim.keymap.set("n", "<C-l>", smart_splits.move_cursor_right)
 vim.keymap.set("n", "<C-k>", smart_splits.move_cursor_up)
@@ -84,12 +84,10 @@ vim.keymap.set("n", "<C-j>", smart_splits.move_cursor_down)
 vim.keymap.set("n", "<C-h>", smart_splits.move_cursor_left)
 
 -- Quicknote
-vim.keymap.set("n", "<leader>nC", quicknote.NewNoteAtCWD)
-vim.keymap.set("n", "<leader>nc", quicknote.NewNoteAtCurrentLine)
-vim.keymap.set("n", "<leader>no", quicknote.OpenNoteAtCurrentLine)
-vim.keymap.set("n", "<leader>nO", quicknote.OpenNoteAtCWD)
+vim.keymap.set("n", "<leader>nc", quicknote.NewNoteAtCWD)
+vim.keymap.set("n", "<leader>nC", quicknote.NewNoteAtCurrentLine)
 vim.keymap.set("n", "<leader>nd", quicknote.DeleteNoteAtCurrentLine)
-vim.keymap.set("n", "<leader>nn", quicknote.ListNotesForCWD)
+vim.keymap.set("n", "<leader>nf", ":Telescope find_files search_dirs=.quicknote<CR>")
 vim.keymap.set("n", "<leader>n]", quicknote.JumpToNextNote)
 vim.keymap.set("n", "<leader>n[", quicknote.JumpToPreviousNote)
 vim.keymap.set("n", "<leader>nt", quicknote.ToggleNoteSigns)
@@ -104,19 +102,19 @@ vim.keymap.set("n", "L", harpoon_ui.nav_next)
 vim.keymap.set("n", "H", harpoon_ui.nav_prev)
 vim.keymap.set("n", "<leader>hc", harpoon_mark.clear_all)
 vim.keymap.set("n", "<leader>h1", function()
-	harpoon_ui.nav_file(1)
+  harpoon_ui.nav_file(1)
 end)
 vim.keymap.set("n", "<leader>h2", function()
-	harpoon_ui.nav_file(2)
+  harpoon_ui.nav_file(2)
 end)
 vim.keymap.set("n", "<leader>h3", function()
-	harpoon_ui.nav_file(3)
+  harpoon_ui.nav_file(3)
 end)
 vim.keymap.set("n", "<leader>h4", function()
-	harpoon_ui.nav_file(4)
+  harpoon_ui.nav_file(4)
 end)
 vim.keymap.set("n", "<leader>h5", function()
-	harpoon_ui.nav_file(5)
+  harpoon_ui.nav_file(5)
 end)
 
 -- Todo
@@ -135,3 +133,7 @@ vim.keymap.set("n", "<leader>zt", "<cmd>Telekasten goto_today<CR>")
 vim.keymap.set("n", "<leader>zd", "<cmd>Telekasten follow_link<CR>")
 vim.keymap.set("n", "<leader>zn", "<cmd>Telekasten new_note<CR>")
 vim.keymap.set("n", "<leader>zb", "<cmd>Telekasten show_backlinks<CR>")
+vim.keymap.set("n", "<leader>zl", "<cmd>Telekasten insert_link<CR>")
+vim.keymap.set("n", "<leader>zb", "<cmd>Telekasten show_backlinks<CR>")
+vim.keymap.set("n", "<leader>zl", "<cmd>Telekasten insert_link<CR>")
+vim.keymap.set("n", "<leader>zl", "<cmd>Telekasten insert_link<CR>")
