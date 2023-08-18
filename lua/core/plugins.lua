@@ -22,18 +22,22 @@ require("lazy").setup({
 			"MunifTanjim/nui.nvim",
 		},
 	},
-	{ "nvim-treesitter/nvim-treesitter", dependencies = { "JoosepAlviste/nvim-ts-context-commentstring" } },
+	{
+		"nvim-treesitter/nvim-treesitter",
+		dependencies = { "JoosepAlviste/nvim-ts-context-commentstring" },
+	},
 	{ "neovim/nvim-lspconfig", event = "InsertEnter" },
 	{ "hrsh7th/cmp-nvim-lsp", event = "InsertEnter" },
-	{ "hrsh7th/cmp-buffer", event = "BufEnter" },
+	{ "hrsh7th/cmp-buffer", event = "InsertEnter" },
 	{ "hrsh7th/cmp-path", event = "InsertEnter" },
 	{ "hrsh7th/cmp-cmdline", event = "BufEnter" },
 	{ "hrsh7th/nvim-cmp", event = "InsertEnter" },
-	{ "hrsh7th/vim-vsnip", event = "BufEnter" },
-	{ "hrsh7th/cmp-vsnip", event = "BufEnter" },
+	{ "hrsh7th/vim-vsnip", event = "InsertEnter" },
+	{ "hrsh7th/cmp-vsnip", event = "InsertEnter" },
 	{
 		"williamboman/mason.nvim",
 		build = ":MasonUpdate",
+		event = "VeryLazy",
 	},
 	{
 		"nvim-telescope/telescope.nvim",
@@ -48,21 +52,32 @@ require("lazy").setup({
 	{ "lewis6991/gitsigns.nvim" },
 	{ "mrjones2014/smart-splits.nvim" },
 	{ "mattkubej/jest.nvim", cmd = { "Jest", "JestFile", "JestSingle" } },
-	{ "EdenEast/nightfox.nvim" },
-	{ "stevearc/dressing.nvim", event = "VeryLazy" },
+	{ "stevearc/dressing.nvim", lazy = true, event = "InsertEnter" },
 	{ "RutaTang/quicknote.nvim", event = "VeryLazy" },
-	{ "Exafunction/codeium.vim", event = "InsertEnter" },
+	{ "Exafunction/codeium.vim", event = "BufEnter" },
 	{ "ThePrimeagen/harpoon", event = "VeryLazy" },
-	{ "folke/todo-comments.nvim" },
+	{
+		"folke/todo-comments.nvim",
+		requires = "nvim-lua/plenary.nvim",
+		lazy = true,
+		event = "VimEnter",
+		-- https://github.com/folke/todo-comments.nvim/issues/133
+		config = function()
+			require("todo-comments").setup({
+				signs = false,
+			})
+		end,
+	},
 	{ "Bryley/neoai.nvim", event = "VeryLazy" },
 	{ "dmmulroy/tsc.nvim", event = "BufEnter" },
 	{
 		"renerocksai/telekasten.nvim",
 		dependencies = { "nvim-telescope/telescope.nvim" },
+		event = "VeryLazy",
 	},
-	{ "sainnhe/everforest" },
-	{ "folke/neodev.nvim" },
-	{ "echasnovski/mini.surround", version = "*" },
+	{ "folke/neodev.nvim", event = "InsertEnter" },
+	{ "echasnovski/mini.surround", version = "*", event = "VeryLazy" },
+	{ "rebelot/kanagawa.nvim", priority = 1000 },
 }, {
 	defaults = {
 		lazy = true,

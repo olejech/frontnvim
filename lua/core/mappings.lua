@@ -4,7 +4,6 @@ local gitsigns = require("gitsigns")
 local builtin = require("telescope.builtin")
 local harpoon_mark = require("harpoon.mark")
 local harpoon_ui = require("harpoon.ui")
-local todo = require("todo-comments")
 
 vim.g.mapleader = " "
 
@@ -117,10 +116,6 @@ vim.keymap.set("n", "<leader>h5", function()
   harpoon_ui.nav_file(5)
 end)
 
--- Todo
-vim.keymap.set("n", "]t", todo.jump_next)
-vim.keymap.set("n", "[t", todo.jump_prev)
-
 -- NeoAI
 vim.keymap.set("n", "<leader>aa", ":NeoAI<cr>")
 vim.keymap.set("v", "<leader>ac", ":NeoAIContext<cr>")
@@ -134,4 +129,5 @@ vim.keymap.set("n", "<leader>zd", "<cmd>Telekasten follow_link<CR>")
 vim.keymap.set("n", "<leader>zc", "<cmd>Telekasten new_note<CR>")
 vim.keymap.set("n", "<leader>zb", "<cmd>Telekasten show_backlinks<CR>")
 vim.keymap.set("n", "<leader>zl", "<cmd>Telekasten insert_link<CR>")
+vim.keymap.set("n", "<leader>z#", "<cmd>Telekasten show_tags<CR>")
 vim.keymap.set("n", "<leader>z#", "<cmd>Telekasten show_tags<CR>")
