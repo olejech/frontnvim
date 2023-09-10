@@ -4,6 +4,8 @@ local lua_ls = require("plugins.lsp.lua-ls")
 
 lspconfig.tsserver.setup(tsserver)
 lspconfig.lua_ls.setup(lua_ls)
+lspconfig.astro.setup({})
+lspconfig.tailwindcss.setup({})
 
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
