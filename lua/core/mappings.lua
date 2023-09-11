@@ -8,7 +8,7 @@ local harpoon_ui = require("harpoon.ui")
 vim.g.mapleader = " "
 
 -- Custom
-vim.keymap.set("n", "<leader>w", "<cmd>wa<cr>")
+vim.keymap.set("n", "<leader>w", "<cmd>w<cr>")
 vim.keymap.set("n", "<leader>q", "<cmd>confirm q<cr>")
 vim.keymap.set("n", "|", "<cmd>vsplit<cr>")
 vim.keymap.set("n", "\\", "<cmd>split<cr>")
@@ -30,15 +30,15 @@ vim.keymap.set("n", "<leader>fc", builtin.grep_string)
 vim.keymap.set("n", "gr", builtin.lsp_references, { noremap = true, silent = true })
 vim.keymap.set("n", "gd", builtin.lsp_definitions, { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>gb", function()
-  builtin.git_bcommits({
-    use_file_path = true,
-    git_command = {
-      "git",
-      "log",
-      "--pretty=%h %s <%cn> (%cr)",
-      "--follow",
-    },
-  })
+	builtin.git_bcommits({
+		use_file_path = true,
+		git_command = {
+			"git",
+			"log",
+			"--pretty=%h %s <%cn> (%cr)",
+			"--follow",
+		},
+	})
 end)
 vim.keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>")
 vim.keymap.set("n", "<leader>fr", builtin.resume)
@@ -52,7 +52,7 @@ vim.keymap.set("n", "<leader>e", ":Neotree float toggle reveal<CR>")
 vim.keymap.set("n", "]g", gitsigns.next_hunk)
 vim.keymap.set("n", "[g", gitsigns.prev_hunk)
 vim.keymap.set("n", "<leader>gl", function()
-  gitsigns.blame_line({ full = true })
+	gitsigns.blame_line({ full = true })
 end)
 vim.keymap.set("n", "<leader>gp", gitsigns.preview_hunk)
 vim.keymap.set("n", "<leader>gh", gitsigns.reset_hunk)
@@ -72,10 +72,10 @@ vim.keymap.set("n", "<leader>jf", "<cmd>JestFile<cr>")
 vim.keymap.set("n", "<C-s>k", "<cmd>resize -20<cr>")
 vim.keymap.set("n", "<C-s>j", "<cmd>resize +20<cr>")
 vim.keymap.set("n", "<C-s>h", function()
-  smart_splits.resize_left(40)
+	smart_splits.resize_left(40)
 end)
 vim.keymap.set("n", "<C-s>l", function()
-  smart_splits.resize_right(40)
+	smart_splits.resize_right(40)
 end)
 vim.keymap.set("n", "<C-l>", smart_splits.move_cursor_right)
 vim.keymap.set("n", "<C-k>", smart_splits.move_cursor_up)
@@ -102,19 +102,19 @@ vim.keymap.set("n", "L", harpoon_ui.nav_next)
 vim.keymap.set("n", "H", harpoon_ui.nav_prev)
 vim.keymap.set("n", "<leader>hd", harpoon_mark.clear_all)
 vim.keymap.set("n", "<leader>h1", function()
-  harpoon_ui.nav_file(1)
+	harpoon_ui.nav_file(1)
 end)
 vim.keymap.set("n", "<leader>h2", function()
-  harpoon_ui.nav_file(2)
+	harpoon_ui.nav_file(2)
 end)
 vim.keymap.set("n", "<leader>h3", function()
-  harpoon_ui.nav_file(3)
+	harpoon_ui.nav_file(3)
 end)
 vim.keymap.set("n", "<leader>h4", function()
-  harpoon_ui.nav_file(4)
+	harpoon_ui.nav_file(4)
 end)
 vim.keymap.set("n", "<leader>h5", function()
-  harpoon_ui.nav_file(5)
+	harpoon_ui.nav_file(5)
 end)
 
 -- NeoAI
