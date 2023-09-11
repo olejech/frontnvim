@@ -88,8 +88,8 @@ vim.keymap.set("n", "<leader>nC", quicknote.NewNoteAtCurrentLine)
 vim.keymap.set("n", "<leader>no", quicknote.OpenNoteAtCurrentLine)
 vim.keymap.set("n", "<leader>nd", quicknote.DeleteNoteAtCurrentLine)
 vim.keymap.set("n", "<leader>nf", ":Telescope find_files search_dirs=.quicknote<CR>")
-vim.keymap.set("n", "<leader>n]", quicknote.JumpToNextNote)
-vim.keymap.set("n", "<leader>n[", quicknote.JumpToPreviousNote)
+vim.keymap.set("n", "]n", quicknote.JumpToNextNote)
+vim.keymap.set("n", "[n", quicknote.JumpToPreviousNote)
 vim.keymap.set("n", "<leader>nt", quicknote.ToggleNoteSigns)
 
 -- Codeium

@@ -1,8 +1,9 @@
-local augroup = vim.api.nvim_create_augroup
 local cmd = vim.api.nvim_create_autocmd
 local quicknote = require("quicknote")
 
-quicknote.setup()
+quicknote.setup({
+	git_branch_recognizable = false,
+})
 
 cmd("BufEnter", {
 	desc = "Show note signs",
