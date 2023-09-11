@@ -78,6 +78,7 @@ require("lazy").setup({
 	{ "folke/neodev.nvim", event = "InsertEnter" },
 	{ "echasnovski/mini.surround", version = "*", event = "VeryLazy" },
 	{ "rebelot/kanagawa.nvim", priority = 1000 },
+	{ "elentok/format-on-save.nvim" },
 }, {
 	defaults = {
 		lazy = true,
