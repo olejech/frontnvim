@@ -10,12 +10,15 @@ format_on_save.setup({
 		html = formatters.lsp,
 		css = formatters.lsp,
 		scss = formatters.prettierd,
-		javascript = formatters.lsp,
-		typescript = formatters.prettierd,
-		typescriptreact = formatters.prettierd,
+		javascript = { formatters.prettierd, formatters.eslint_d_fix },
+		typescript = { formatters.prettierd, formatters.eslint_d_fix },
+		typescriptreact = { formatters.prettierd, formatters.eslint_d_fix },
 		json = formatters.prettierd,
 		lua = formatters.lsp,
 		markdown = formatters.prettierd,
 		yaml = formatters.lsp,
+	},
+	experiments = {
+		partial_update = "diff", -- or 'line-by-line'
 	},
 })
