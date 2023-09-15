@@ -1,5 +1,5 @@
 require("kanagawa").setup({
-  overrides = function(colors) -- add/modify highlights
+  overrides = function()
     return {
       Boolean = { link = "Special" },
       ["@lsp.typemod.function.readonly"] = { bold = false },

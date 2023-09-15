@@ -4,6 +4,9 @@ local gitsigns = require("gitsigns")
 local builtin = require("telescope.builtin")
 local harpoon_mark = require("harpoon.mark")
 local harpoon_ui = require("harpoon.ui")
+local telescope_actions = require("telescope.actions")
+local telescope_lga_actions = require("telescope-live-grep-args.actions")
+
 
 vim.g.mapleader = " "
 
@@ -44,6 +47,20 @@ vim.keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>")
 vim.keymap.set("n", "<leader>fr", builtin.resume)
 vim.keymap.set("n", "<leader>fn", "<cmd>:cnext<cr>")
 vim.keymap.set("n", "<leader>fp", "<cmd>:cprevious<cr>")
+local function setup_telescope_mappings()
+  return {
+    i = {
+      ["<C-n>"] = telescope_actions.cycle_history_next,
+      ["<C-p>"] = telescope_actions.cycle_history_prev,
+      ["<C-k>"] = telescope_lga_actions.quote_prompt(),
+      ["|"] = telescope_actions.select_vertical,
+    },
+    n = {
+      ["|"] = telescope_actions.select_vertical,
+      ["\\"] = telescope_actions.select_horizontal,
+    },
+  }
+end
 
 -- Neotree
 vim.keymap.set("n", "<leader>e", ":Neotree float toggle reveal<CR>")
@@ -148,5 +165,6 @@ vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 
 return {
-  neotree = setup_neotree_mappings
+  neotree = setup_neotree_mappings,
+  telescope = setup_telescope_mappings
 }
