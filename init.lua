@@ -1,5 +1,4 @@
 require("core.plugins")
-require("core.colors")
 require("core.config")
 require("core.autocmds")
 require("core.mappings")

@@ -24,4 +24,4 @@ vim.opt.laststatus = 0
 vim.opt.winbar = "%f%m"
 vim.opt.pumheight = 10
 vim.opt.cursorline = true
-vim.api.nvim_exec("language en_US", true)
+vim.cmd.language('en_US')
