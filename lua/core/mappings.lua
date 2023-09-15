@@ -47,6 +47,16 @@ vim.keymap.set("n", "<leader>fp", "<cmd>:cprevious<cr>")
 
 -- Neotree
 vim.keymap.set("n", "<leader>e", ":Neotree float toggle reveal<CR>")
+local function setup_neotree_mappings()
+  return {
+    ["<space>"] = false,
+    ["/"] = "noop",
+    ["g/"] = "fuzzy_finder",
+    o = "open",
+    ["\\"] = "open_split",
+    ["|"] = "open_vsplit",
+  }
+end
 
 -- Gitsigns
 vim.keymap.set("n", "]g", gitsigns.next_hunk)
@@ -136,3 +146,7 @@ vim.keymap.set("n", "<leader>z#", "<cmd>Telekasten show_tags<CR>")
 -- LSP
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
+
+return {
+  neotree = setup_neotree_mappings
+}
