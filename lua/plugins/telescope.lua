@@ -25,4 +25,12 @@ require("telescope").setup({
       file_ignore_patterns = { ".git/", "%.lock", "%.svg" },
     },
   },
+  extensions = {
+    quicknote = {
+      defaultScope = "CWD",
+    }
+  }
+
 })
+
+require("telescope").load_extension("quicknote")
