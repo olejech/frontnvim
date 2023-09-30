@@ -11,7 +11,7 @@ local telescope_lga_actions = require("telescope-live-grep-args.actions")
 vim.g.mapleader = " "
 
 -- Custom
-vim.keymap.set("n", "<leader>w", "<cmd>w<cr>")
+vim.keymap.set("n", "<leader>w", "<cmd>wa<cr>")
 vim.keymap.set("n", "<leader>q", "<cmd>confirm q<cr>")
 vim.keymap.set("n", "|", "<cmd>vsplit<cr>")
 vim.keymap.set("n", "\\", "<cmd>split<cr>")
