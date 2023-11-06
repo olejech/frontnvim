@@ -78,6 +78,7 @@ require("lazy").setup({
   { "echasnovski/mini.surround",  version = "*",        event = "VeryLazy" },
   { "rebelot/kanagawa.nvim",      priority = 1000,      lazy = false },
   { "elentok/format-on-save.nvim" },
+  { "AstroNvim/astrotheme" }
 }, {
   defaults = {
     lazy = true,
