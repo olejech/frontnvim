@@ -76,9 +76,15 @@ require("lazy").setup({
   },
   { "folke/neodev.nvim",          event = "InsertEnter" },
   { "echasnovski/mini.surround",  version = "*",        event = "VeryLazy" },
-  { "rebelot/kanagawa.nvim",      priority = 1000,      lazy = false },
+  -- { "rebelot/kanagawa.nvim",      priority = 1000,      lazy = false },
   { "elentok/format-on-save.nvim" },
-  { "AstroNvim/astrotheme" }
+  { "AstroNvim/astrotheme" },
+  { "catppuccin/nvim",            name = "catppuccin",  priority = 1000 },
+  {
+    "kylechui/nvim-surround",
+    version = "*",
+    event = "VeryLazy",
+  }
 }, {
   defaults = {
     lazy = true,

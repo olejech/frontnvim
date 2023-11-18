@@ -1,2 +1,3 @@
-require("astrotheme").setup()
-vim.cmd("colorscheme astrotheme")
+require("catppuccin").setup()
+
+vim.cmd("colorscheme catppuccin")
