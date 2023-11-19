@@ -21,7 +21,6 @@ vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 vim.keymap.set("n", "<leader>ll", "\"ayiwoconsole.log('<c-r>=expand('%:t:r')<cr> —> <C-R>a:', <C-R>a);<Esc>")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
-vim.keymap.set("x", "<leader>p", [["_dP]])
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
@@ -43,7 +42,7 @@ vim.keymap.set("n", "<leader>gb", function()
     },
   })
 end)
-vim.keymap.set("n", "<leader>ft", "<cmd>TodoTelescope<cr>")
+vim.keymap.set("n", "<leader>ft", "<cmd>TodoTelescope keywords=FIX<cr>")
 vim.keymap.set("n", "<leader>fr", builtin.resume)
 vim.keymap.set("n", "<leader>fn", "<cmd>:cnext<cr>")
 vim.keymap.set("n", "<leader>fp", "<cmd>:cprevious<cr>")
