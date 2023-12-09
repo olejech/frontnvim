@@ -41,7 +41,7 @@ require("lazy").setup({
   },
   {
     "nvim-telescope/telescope.nvim",
-    tag = "0.1.1",
+    tag = "0.1.5",
     dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-live-grep-args.nvim" },
     event = "BufEnter",
   },
@@ -75,10 +75,8 @@ require("lazy").setup({
     event = "VeryLazy",
   },
   { "folke/neodev.nvim",          event = "InsertEnter" },
-  { "echasnovski/mini.surround",  version = "*",        event = "VeryLazy" },
   -- { "rebelot/kanagawa.nvim",      priority = 1000,      lazy = false },
   { "elentok/format-on-save.nvim" },
-  { "AstroNvim/astrotheme" },
   { "catppuccin/nvim",            name = "catppuccin",  priority = 1000 },
   {
     "kylechui/nvim-surround",
