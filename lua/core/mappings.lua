@@ -144,10 +144,6 @@ vim.keymap.set("n", "<leader>h5", function()
   harpoon_ui.nav_file(5)
 end)
 
--- NeoAI
-vim.keymap.set("n", "<leader>aa", ":NeoAI<cr>")
-vim.keymap.set("v", "<leader>ac", ":NeoAIContext<cr>")
-vim.keymap.set("v", "<leader>ai", ":NeoAIInjectContext")
 
 -- Telekasten
 vim.keymap.set("n", "<leader>zf", "<cmd>Telekasten find_notes<CR>")
