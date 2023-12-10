@@ -25,6 +25,4 @@ vim.opt.winbar = "%f%m"
 vim.opt.pumheight = 10
 vim.opt.cursorline = true
 vim.cmd.language('en_US')
-vim.o.langmap =
-"ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯ;ABCDEFGHIJKLMNOPQRSTUVWXYZ,фисвуапршолдьтщзйкыегмцчня;abcdefghijklmnopqrstuvwxyz"
 vim.o.spelllang = "ru_ru,en_us"
