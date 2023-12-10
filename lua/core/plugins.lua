@@ -68,16 +68,16 @@ require("lazy").setup({
       })
     end,
   },
-  { "dmmulroy/tsc.nvim",          event = "BufEnter" },
+  { "dmmulroy/tsc.nvim",             event = "BufEnter" },
   {
     "renerocksai/telekasten.nvim",
     dependencies = { "nvim-telescope/telescope.nvim" },
     event = "VeryLazy",
   },
-  { "folke/neodev.nvim",          event = "InsertEnter" },
+  { "folke/neodev.nvim",             event = "InsertEnter" },
   -- { "rebelot/kanagawa.nvim",      priority = 1000,      lazy = false },
   { "elentok/format-on-save.nvim" },
-  { "catppuccin/nvim",            name = "catppuccin",  priority = 1000 },
+  { "eddyekofo94/gruvbox-flat.nvim", priority = 1000 },
   {
     "kylechui/nvim-surround",
     version = "*",
