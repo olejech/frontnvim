@@ -90,6 +90,9 @@ require("lazy").setup({
       "nvim-neo-tree/neo-tree.nvim",
     },
   },
+  {
+    "kazhala/close-buffers.nvim", event = "BufEnter"
+  }
 }, {
   defaults = {
     lazy = true,
