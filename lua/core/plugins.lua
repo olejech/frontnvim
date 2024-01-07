@@ -54,11 +54,18 @@ require("lazy").setup({
   { "mattkubej/jest.nvim",             cmd = { "Jest", "JestFile", "JestSingle" } },
   { "stevearc/dressing.nvim",          lazy = true,                               event = "InsertEnter" },
   { "RutaTang/quicknote.nvim",         event = "VeryLazy" },
-  { "Exafunction/codeium.vim",         event = "BufEnter" },
-  { "ThePrimeagen/harpoon",            event = "VeryLazy" },
+  {
+    "Exafunction/codeium.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "hrsh7th/nvim-cmp",
+    },
+    event = "BufEnter"
+  },
+  { "ThePrimeagen/harpoon", event = "VeryLazy" },
   {
     "folke/todo-comments.nvim",
-    requires = "nvim-lua/plenary.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
     lazy = true,
     event = "VimEnter",
     -- https://github.com/folke/todo-comments.nvim/issues/133
@@ -68,7 +75,7 @@ require("lazy").setup({
       })
     end,
   },
-  { "dmmulroy/tsc.nvim",             event = "BufEnter" },
+  { "dmmulroy/tsc.nvim",    event = "BufEnter" },
   {
     "renerocksai/telekasten.nvim",
     dependencies = { "nvim-telescope/telescope.nvim" },

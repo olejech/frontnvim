@@ -24,6 +24,7 @@ cmp.setup({
     { name = "nvim_lsp", max_item_count = 50 },
     { name = "vsnip" }, -- For vsnip users.
     { name = "buffer" },
+    { name = "codeium" }
   }, {
     { name = "buffer" },
   }),
