@@ -99,6 +99,10 @@ require("lazy").setup({
   },
   {
     "kazhala/close-buffers.nvim", event = "BufEnter"
+  },
+  {
+    "nvim-treesitter/nvim-treesitter-textobjects",
+    event = "InsertEnter"
   }
 }, {
   defaults = {
