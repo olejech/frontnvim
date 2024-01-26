@@ -107,7 +107,8 @@ require("lazy").setup({
   {
     "phelipetls/jsonpath.nvim",
     event = "BufEnter"
-  }
+  },
+  { "onsails/lspkind.nvim", event = "InsertEnter" },
 }, {
   defaults = {
     lazy = true,
