@@ -161,6 +161,11 @@ vim.keymap.set("n", "<leader>z#", "<cmd>Telekasten show_tags<CR>")
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 
+-- Jsonpath
+vim.keymap.set("n", "y<C-p>", function()
+  vim.fn.setreg("+", require("jsonpath").get():sub(2, -1))
+end)
+
 return {
   neotree = setup_neotree_mappings,
   telescope = setup_telescope_mappings

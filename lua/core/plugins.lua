@@ -103,6 +103,10 @@ require("lazy").setup({
   {
     "nvim-treesitter/nvim-treesitter-textobjects",
     event = "InsertEnter"
+  },
+  {
+    "phelipetls/jsonpath.nvim",
+    event = "BufEnter"
   }
 }, {
   defaults = {

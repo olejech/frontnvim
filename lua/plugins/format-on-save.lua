@@ -1,6 +1,8 @@
 local format_on_save = require("format-on-save")
 local formatters = require("format-on-save.formatters")
 
+local prettierd = formatters.shell({ cmd = { "prettierd", "%", "--cache" } })
+
 format_on_save.setup({
   exclude_path_patterns = {
     "/node_modules/",
@@ -9,14 +11,12 @@ format_on_save.setup({
   formatter_by_ft = {
     html = formatters.lsp,
     css = formatters.lsp,
-    scss = formatters.prettierd,
-    javascript = { formatters.prettierd, formatters.eslint_d_fix },
-    typescript = { formatters.prettierd, formatters.eslint_d_fix },
-    typescriptreact = { formatters.prettierd, formatters.eslint_d_fix },
-    json = formatters.prettierd,
+    scss = prettierd,
+    javascript = { prettierd, formatters.eslint_d_fix },
+    typescript = { prettierd, formatters.eslint_d_fix },
+    typescriptreact = { prettierd, formatters.eslint_d_fix },
     lua = formatters.lsp,
-    markdown = formatters.prettierd,
-    telekasten = formatters.prettierd,
+    markdown = prettierd,
     yaml = formatters.lsp,
   },
   experiments = {
