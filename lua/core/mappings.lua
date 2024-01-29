@@ -29,7 +29,8 @@ vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
 vim.keymap.set("n", "<leader>fw", require("telescope").extensions.live_grep_args.live_grep_args, {})
 vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 vim.keymap.set("n", "<leader>fc", builtin.grep_string)
-vim.keymap.set("n", "gr", builtin.lsp_references, { noremap = true, silent = true })
+vim.keymap.set("n", "gr", function() builtin.lsp_references({ include_declaration = false }) end,
+  { noremap = true, silent = true })
 vim.keymap.set("n", "gd", builtin.lsp_definitions, { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>gb", function()
   builtin.git_bcommits({
