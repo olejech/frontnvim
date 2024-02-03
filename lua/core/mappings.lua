@@ -25,7 +25,9 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 
 -- Telescope
-vim.keymap.set("n", "<leader>ff", builtin.find_files, {})
+vim.keymap.set("n", "<leader>ff", function()
+  require("telescope").extensions.smart_open.smart_open()
+end, { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>fw", require("telescope").extensions.live_grep_args.live_grep_args, {})
 vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 vim.keymap.set("n", "<leader>fc", builtin.grep_string)
