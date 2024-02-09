@@ -28,9 +28,12 @@ require("telescope").setup({
   extensions = {
     quicknote = {
       defaultScope = "CWD",
+    },
+    smart_open = {
+      cwd_only = true,
+      filename_first = false,
     }
   }
-
 })
 
 require("telescope").load_extension("quicknote")
