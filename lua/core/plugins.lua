@@ -81,10 +81,8 @@ require("lazy").setup({
     dependencies = { "nvim-telescope/telescope.nvim" },
     event = "VeryLazy",
   },
-  { "folke/neodev.nvim",             event = "InsertEnter" },
-  -- { "rebelot/kanagawa.nvim",      priority = 1000,      lazy = false },
+  { "folke/neodev.nvim",          event = "InsertEnter" },
   { "elentok/format-on-save.nvim" },
-  { "eddyekofo94/gruvbox-flat.nvim", priority = 1000 },
   {
     "kylechui/nvim-surround",
     version = "*",
@@ -109,6 +107,11 @@ require("lazy").setup({
     event = "BufEnter"
   },
   { "onsails/lspkind.nvim", event = "InsertEnter" },
+  {
+    'AlexvZyl/nordic.nvim',
+    lazy = false,
+    priority = 1000,
+  },
   {
     "danielfalk/smart-open.nvim",
     branch = "0.2.x",

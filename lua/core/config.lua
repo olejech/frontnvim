@@ -26,3 +26,4 @@ vim.opt.pumheight = 10
 vim.opt.cursorline = true
 vim.cmd.language('en_US')
 vim.o.spelllang = "ru_ru,en_us"
+vim.opt.fillchars = { eob = " " }

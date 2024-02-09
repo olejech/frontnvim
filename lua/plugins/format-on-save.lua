@@ -18,6 +18,7 @@ format_on_save.setup({
     lua = formatters.lsp,
     markdown = prettierd,
     yaml = formatters.lsp,
+    telekasten = formatters.prettierd
   },
   experiments = {
     partial_update = "diff", -- or 'line-by-line'
