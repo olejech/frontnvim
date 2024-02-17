@@ -9,6 +9,7 @@ require("telescope").setup({
     },
     sorting_strategy = "ascending",
     mappings = mappings.telescope(),
+    file_ignore_patterns = { "%-lock" }
   },
   pickers = {
     lsp_definitions = {
