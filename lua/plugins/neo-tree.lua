@@ -11,6 +11,17 @@ require("neo-tree").setup({
     type = { enabled = false },
     last_modified = { enabled = false },
     created = { enabled = false },
+    git_status = {
+      symbols = {
+        deleted   = "✖",
+        renamed   = "󰁕",
+        untracked = "",
+        ignored   = "",
+        unstaged  = "",
+        staged    = "",
+        conflict  = "",
+      }
+    },
   },
   window = {
     mappings = mappings.neotree(),
