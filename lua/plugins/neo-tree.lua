@@ -6,12 +6,20 @@ vim.fn.sign_define("DiagnosticSignInfo", { text = " ", texthl = "DiagnosticSi
 vim.fn.sign_define("DiagnosticSignHint", { text = " ", texthl = "DiagnosticSignHint" })
 
 require("neo-tree").setup({
+  default_component_configs = {
+    file_size = { enabled = false },
+    type = { enabled = false },
+    last_modified = { enabled = false },
+    created = { enabled = false },
+  },
   window = {
     mappings = mappings.neotree(),
     position = "float",
   },
   filesystem = {
-    follow_current_file = true,
+    follow_current_file = {
+      enabled = true
+    },
   },
   hide_root_node = true,
 })

@@ -67,15 +67,22 @@ local function setup_telescope_mappings()
 end
 
 -- Neotree
-vim.keymap.set("n", "<leader>e", ":Neotree float toggle reveal<CR>")
+vim.keymap.set("n", "<leader>e", ":Neotree <CR>")
 local function setup_neotree_mappings()
   return {
     ["<space>"] = false,
     ["/"] = "noop",
     ["g/"] = "fuzzy_finder",
-    o = "open",
     ["\\"] = "open_split",
     ["|"] = "open_vsplit",
+    ["o"] = { "open", nowait = true },
+    ["oc"] = "noop",
+    ["od"] = "noop",
+    ["og"] = "noop",
+    ["om"] = "noop",
+    ["on"] = "noop",
+    ["os"] = "noop",
+    ["ot"] = "noop",
   }
 end
 

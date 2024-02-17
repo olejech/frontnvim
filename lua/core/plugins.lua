@@ -15,7 +15,7 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   {
     "nvim-neo-tree/neo-tree.nvim",
-    branch = "v2.x",
+    branch = "v3.x",
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-tree/nvim-web-devicons",
@@ -112,15 +112,15 @@ require("lazy").setup({
     lazy = false,
     priority = 1000,
   },
-  {
-    "danielfalk/smart-open.nvim",
-    branch = "0.2.x",
-    dependencies = {
-      "kkharji/sqlite.lua",
-      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-      { "nvim-telescope/telescope-fzy-native.nvim" },
-    },
-  }
+{
+  "danielfalk/smart-open.nvim",
+  branch = "0.2.x",
+  dependencies = {
+    "kkharji/sqlite.lua",
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    { "nvim-telescope/telescope-fzy-native.nvim" },
+  },
+}
 }, {
   defaults = {
     lazy = true,
