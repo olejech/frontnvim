@@ -133,6 +133,9 @@ vim.keymap.set("n", "<leader>nt", quicknote.ToggleNoteSigns)
 
 -- Codeium
 vim.keymap.set("i", "<C-c><cr>", vim.fn["codeium#Accept"], { expr = true })
+vim.keymap.set("i", "<C-c>;", function() return vim.fn["codeium#CycleCompletions"](1) end, { expr = true })
+vim.keymap.set('i', '<C-c>x', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
+
 
 -- Harpoon
 vim.keymap.set("n", "<leader>hc", harpoon_mark.add_file)

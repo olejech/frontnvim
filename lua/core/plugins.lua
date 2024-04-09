@@ -55,11 +55,7 @@ require("lazy").setup({
   { "stevearc/dressing.nvim",          lazy = true,                               event = "InsertEnter" },
   { "RutaTang/quicknote.nvim",         event = "VeryLazy" },
   {
-    "Exafunction/codeium.nvim",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "hrsh7th/nvim-cmp",
-    },
+    "Exafunction/codeium.vim",
     event = "BufEnter"
   },
   { "ThePrimeagen/harpoon", event = "VeryLazy" },
@@ -112,15 +108,15 @@ require("lazy").setup({
     lazy = false,
     priority = 1000,
   },
-{
-  "danielfalk/smart-open.nvim",
-  branch = "0.2.x",
-  dependencies = {
-    "kkharji/sqlite.lua",
-    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-    { "nvim-telescope/telescope-fzy-native.nvim" },
-  },
-}
+  {
+    "danielfalk/smart-open.nvim",
+    branch = "0.2.x",
+    dependencies = {
+      "kkharji/sqlite.lua",
+      { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+      { "nvim-telescope/telescope-fzy-native.nvim" },
+    },
+  }
 }, {
   defaults = {
     lazy = true,
