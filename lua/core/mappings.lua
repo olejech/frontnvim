@@ -179,6 +179,11 @@ vim.keymap.set("n", "y<C-p>", function()
   vim.fn.setreg("+", require("jsonpath").get():sub(2, -1))
 end)
 
+-- Copy relative file path
+vim.keymap.set("n", "y<C-f>", function()
+  vim.fn.setreg("+", vim.fn.expand("%"))
+end)
+
 return {
   neotree = setup_neotree_mappings,
   telescope = setup_telescope_mappings
