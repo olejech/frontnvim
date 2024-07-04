@@ -33,4 +33,6 @@ require("neo-tree").setup({
     },
   },
   hide_root_node = true,
+  popup_border_style = "rounded",
+  enable_diagnostics = false,
 })

@@ -67,7 +67,7 @@ local function setup_telescope_mappings()
 end
 
 -- Neotree
-vim.keymap.set("n", "<leader>e", ":Neotree reveal <CR>")
+vim.keymap.set("n", "<leader>e", "<cmd>Neotree<CR>")
 local function setup_neotree_mappings()
   return {
     ["<space>"] = false,
