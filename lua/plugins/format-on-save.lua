@@ -11,7 +11,7 @@ format_on_save.setup({
   formatter_by_ft = {
     html = formatters.lsp,
     css = formatters.lsp,
-    scss = prettierd,
+    scss = formatters.lsp,
     javascript = { prettierd, formatters.eslint_d_fix },
     typescript = { prettierd, formatters.eslint_d_fix },
     typescriptreact = { prettierd, formatters.eslint_d_fix },
