@@ -10,6 +10,7 @@ lspconfig.stylelint_lsp.setup({
       autoFixOnSave = true,
     },
   },
+  filetypes = { "css", "scss" }
 })
 
 -- Use LspAttach autocommand to only map the following keys
