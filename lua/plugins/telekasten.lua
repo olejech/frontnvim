@@ -7,3 +7,6 @@ require("telekasten").setup({
   sort = "modified",
   show_tags_theme = "get_cursor"
 })
+vim.cmd [[hi tkHighlight ctermbg=214 ctermfg=124 cterm=bold guibg=#fabd2f guifg=#9d0006 gui=bold]]
+vim.cmd [[hi tklink ctermfg=72 guifg=#689d6a cterm=bold,underline gui=bold,underline]]
+vim.cmd [[hi tkBrackets ctermfg=gray guifg=gray]]
