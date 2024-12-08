@@ -7,6 +7,7 @@ local harpoon_ui = require("harpoon.ui")
 local telescope_actions = require("telescope.actions")
 local telescope_lga_actions = require("telescope-live-grep-args.actions")
 
+local is_fullscreen = false
 
 vim.g.mapleader = " "
 
@@ -117,12 +118,14 @@ vim.keymap.set("n", "<C-s>l", function()
 end)
 -- Resize fullscreen
 vim.keymap.set('n', '<C-s>f', function()
-  vim.cmd('wincmd |')
-  vim.cmd('wincmd _')
-end)
--- Resize reset
-vim.keymap.set('n', '<C-s>r', function()
-  vim.cmd('wincmd =')
+  if is_fullscreen then
+    vim.cmd('wincmd =')
+    is_fullscreen = false
+  else
+    vim.cmd('wincmd |')
+    vim.cmd('wincmd _')
+    is_fullscreen = true
+  end
 end)
 
 vim.keymap.set("n", "<C-l>", smart_splits.move_cursor_right)
