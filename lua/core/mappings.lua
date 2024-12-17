@@ -115,6 +115,16 @@ end)
 vim.keymap.set("n", "<C-s>l", function()
   smart_splits.resize_right(40)
 end)
+-- Resize fullscreen
+vim.keymap.set('n', '<C-s>f', function()
+  vim.cmd('wincmd |')
+  vim.cmd('wincmd _')
+end)
+-- Resize reset
+vim.keymap.set('n', '<C-s>r', function()
+  vim.cmd('wincmd =')
+end)
+
 vim.keymap.set("n", "<C-l>", smart_splits.move_cursor_right)
 vim.keymap.set("n", "<C-k>", smart_splits.move_cursor_up)
 vim.keymap.set("n", "<C-j>", smart_splits.move_cursor_down)
