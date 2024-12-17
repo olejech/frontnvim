@@ -2,16 +2,16 @@ local lspconfig = require("lspconfig")
 local lua_ls = require("plugins.lsp.lua-ls")
 
 lspconfig.lua_ls.setup(lua_ls)
-lspconfig.astro.setup({})
-lspconfig.tailwindcss.setup({})
-lspconfig.stylelint_lsp.setup({
-  settings = {
-    stylelintplus = {
-      autoFixOnSave = true,
-    },
-  },
-  filetypes = { "css", "scss" }
-})
+-- lspconfig.astro.setup({})
+-- lspconfig.tailwindcss.setup({})
+-- lspconfig.stylelint_lsp.setup({
+--   settings = {
+--     stylelintplus = {
+--       autoFixOnSave = true,
+--     },
+--   },
+--   filetypes = { "css", "scss" }
+-- })
 
 -- Use LspAttach autocommand to only map the following keys
 -- after the language server attaches to the current buffer

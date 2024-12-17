@@ -1,1 +1,1 @@
-require("close_buffers").setup()
+require("close_buffers").setup({})

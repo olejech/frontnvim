@@ -13,6 +13,7 @@ require("nvim-treesitter.configs").setup({
     "css",
     "scss",
     "markdown_inline",
+    "diff"
   },
   highlight = {
     enable = true,

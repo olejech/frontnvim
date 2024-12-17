@@ -88,8 +88,8 @@ local function setup_neotree_mappings()
 end
 
 -- Gitsigns
-vim.keymap.set("n", "]g", gitsigns.next_hunk)
-vim.keymap.set("n", "[g", gitsigns.prev_hunk)
+vim.keymap.set("n", "]g", function() gitsigns.nav_hunk('next') end)
+vim.keymap.set("n", "[g", function() gitsigns.nav_hunk('prev') end)
 vim.keymap.set("n", "<leader>gl", function()
   gitsigns.blame_line({ full = true })
 end)
@@ -149,7 +149,6 @@ vim.keymap.set("i", "<C-c><cr>", vim.fn["codeium#Accept"], { expr = true })
 vim.keymap.set("i", "<C-c>;", function() return vim.fn["codeium#CycleCompletions"](1) end, { expr = true })
 vim.keymap.set('i', '<C-c>x', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
 
-
 -- Harpoon
 vim.keymap.set("n", "<leader>hc", harpoon_mark.add_file)
 vim.keymap.set("n", "<leader>hf", harpoon_ui.toggle_quick_menu)
@@ -172,7 +171,6 @@ vim.keymap.set("n", "<leader>h5", function()
   harpoon_ui.nav_file(5)
 end)
 
-
 -- Telekasten
 vim.keymap.set("n", "<leader>zf", "<cmd>Telekasten find_notes<CR>")
 vim.keymap.set("n", "<leader>zw", "<cmd>Telekasten search_notes<CR>")
@@ -186,11 +184,6 @@ vim.keymap.set("n", "<leader>z#", "<cmd>Telekasten show_tags<CR>")
 -- LSP
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
-
--- Jsonpath
-vim.keymap.set("n", "y<C-p>", function()
-  vim.fn.setreg("+", require("jsonpath").get():sub(2, -1))
-end)
 
 -- Copy relative file path
 vim.keymap.set("n", "y<C-f>", function()
