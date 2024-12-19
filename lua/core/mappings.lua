@@ -16,6 +16,8 @@ vim.keymap.set("n", "|", "<cmd>vsplit<cr>")
 vim.keymap.set("n", "\\", "<cmd>split<cr>")
 vim.keymap.set("n", "<leader>c", "<cmd>bd!<cr>")
 vim.keymap.set("n", "<leader>bd", "<cmd>BDelete hidden<cr>")
+vim.keymap.set("n", "<leader>bp", "<cmd>bp<cr>")
+vim.keymap.set("n", "<leader>bn", "<cmd>bn<cr>")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>ll", "\"ayiwoconsole.log('<c-r>=expand('%:t:r')<cr> —> <C-R>a:', <C-R>a);<Esc>")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -32,7 +34,7 @@ vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 vim.keymap.set("n", "<leader>fc", builtin.grep_string)
 vim.keymap.set("n", "gr", function() builtin.lsp_references({ include_declaration = false }) end,
   { noremap = true, silent = true })
-vim.keymap.set("n", "gd", builtin.lsp_definitions, { noremap = true, silent = true })
+-- vim.keymap.set("n", "gd", builtin.lsp_definitions, { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>gb", function()
   builtin.git_bcommits({
     use_file_path = true,
