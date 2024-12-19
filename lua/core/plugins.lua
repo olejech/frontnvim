@@ -59,7 +59,12 @@ require("lazy").setup({
     commit = "289eb724e5d6fab2263e94a1ad6e54afebefafb2"
 
   },
-  { "ThePrimeagen/harpoon", event = "VeryLazy" },
+  {
+    "otavioschwanck/arrow.nvim",
+    dependencies = {
+      { "nvim-tree/nvim-web-devicons" },
+    }
+  },
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
@@ -72,7 +77,7 @@ require("lazy").setup({
       })
     end,
   },
-  { "dmmulroy/tsc.nvim",    event = "BufEnter" },
+  { "dmmulroy/tsc.nvim",          event = "BufEnter" },
   {
     "renerocksai/telekasten.nvim",
     dependencies = { "nvim-telescope/telescope.nvim" },

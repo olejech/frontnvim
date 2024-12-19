@@ -8,7 +8,6 @@ require 'nordic'.setup({
     highlights.Visual = { bg = palette.gray2 }
   end,
   on_palette = function(palette)
-    palette.blue2 = palette.orange.base
     palette.cyan.base = palette.magenta.base
   end
 })
