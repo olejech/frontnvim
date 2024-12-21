@@ -19,7 +19,7 @@ vim.keymap.set("n", "<leader>bd", "<cmd>BDelete hidden<cr>")
 vim.keymap.set("n", "<leader>bp", "<cmd>bp<cr>")
 vim.keymap.set("n", "<leader>bn", "<cmd>bn<cr>")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
-vim.keymap.set("n", "<leader>ll", "\"ayiwoconsole.log('<c-r>=expand('%:t:r')<cr> —> <C-R>a:', <C-R>a);<Esc>")
+-- vim.keymap.set("n", "<leader>ll", "\"ayiwoconsole.log('<c-r>=expand('%:t:r')<cr> —> <C-R>a:', <C-R>a);<Esc>")
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
@@ -34,7 +34,7 @@ vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 vim.keymap.set("n", "<leader>fc", builtin.grep_string)
 vim.keymap.set("n", "gr", function() builtin.lsp_references({ include_declaration = false }) end,
   { noremap = true, silent = true })
--- vim.keymap.set("n", "gd", builtin.lsp_definitions, { noremap = true, silent = true })
+vim.keymap.set("n", "gd", function() end, { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>gb", function()
   builtin.git_bcommits({
     use_file_path = true,
@@ -152,7 +152,7 @@ vim.keymap.set('i', '<C-c>x', function() return vim.fn['codeium#Clear']() end, {
 -- Arrow
 vim.keymap.set("n", "H", require("arrow.persist").previous)
 vim.keymap.set("n", "L", require("arrow.persist").next)
-vim.keymap.set("n", "M", require("arrow.persist").toggle)
+vim.keymap.set("n", "<leader>ac", require("arrow.persist").toggle)
 
 -- Telekasten
 vim.keymap.set("n", "<leader>zf", "<cmd>Telekasten find_notes<CR>")
@@ -167,6 +167,10 @@ vim.keymap.set("n", "<leader>z#", "<cmd>Telekasten show_tags<CR>")
 -- LSP
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
+
+-- Logsitter
+vim.keymap.set("n", "<leader>lg", require("logsitter").log)
+
 
 -- Copy relative file path
 vim.keymap.set("n", "y<C-f>", function()

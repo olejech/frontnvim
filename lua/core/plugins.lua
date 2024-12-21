@@ -108,7 +108,7 @@ require("lazy").setup({
     "phelipetls/jsonpath.nvim",
     event = "BufEnter"
   },
-  { "onsails/lspkind.nvim", event = "InsertEnter" },
+  { "onsails/lspkind.nvim",  event = "InsertEnter" },
   {
     'AlexvZyl/nordic.nvim',
     lazy = false,
@@ -127,7 +127,8 @@ require("lazy").setup({
     "pmizio/typescript-tools.nvim",
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
     opts = {},
-  }
+  },
+  { "gaelph/logsitter.nvim", dependencies = { "nvim-treesitter/nvim-treesitter" } },
 }, {
   defaults = {
     lazy = true,
