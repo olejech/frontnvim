@@ -34,7 +34,6 @@ vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
 vim.keymap.set("n", "<leader>fc", builtin.grep_string)
 vim.keymap.set("n", "gr", function() builtin.lsp_references({ include_declaration = false }) end,
   { noremap = true, silent = true })
-vim.keymap.set("n", "gd", function() end, { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>gb", function()
   builtin.git_bcommits({
     use_file_path = true,
@@ -169,7 +168,7 @@ vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
 vim.keymap.set("n", "]d", vim.diagnostic.goto_next)
 
 -- Logsitter
-vim.keymap.set("n", "<leader>lg", require("logsitter").log)
+vim.keymap.set("n", "<leader>ll", require("logsitter").log)
 
 
 -- Copy relative file path
