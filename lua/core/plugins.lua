@@ -129,6 +129,25 @@ require("lazy").setup({
     opts = {},
   },
   { "gaelph/logsitter.nvim", dependencies = { "nvim-treesitter/nvim-treesitter" } },
+  {
+    "ibhagwan/fzf-lua",
+    -- optional for icon support
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      -- calling `setup` is optional for customization
+      require("fzf-lua").setup({})
+    end
+  },
+  {
+    "epwalsh/obsidian.nvim",
+    version = "*",
+    lazy = true,
+    ft = "markdown",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+    },
+  }
+
 }, {
   defaults = {
     lazy = true,

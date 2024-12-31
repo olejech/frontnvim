@@ -4,6 +4,7 @@ local gitsigns = require("gitsigns")
 local builtin = require("telescope.builtin")
 local telescope_actions = require("telescope.actions")
 local telescope_lga_actions = require("telescope-live-grep-args.actions")
+local obsidian = require("plugins.obsidian-nvim")
 
 local is_fullscreen = false
 
@@ -153,15 +154,25 @@ vim.keymap.set("n", "H", require("arrow.persist").previous)
 vim.keymap.set("n", "L", require("arrow.persist").next)
 vim.keymap.set("n", "<leader>ac", require("arrow.persist").toggle)
 
--- Telekasten
-vim.keymap.set("n", "<leader>zf", "<cmd>Telekasten find_notes<CR>")
-vim.keymap.set("n", "<leader>zw", "<cmd>Telekasten search_notes<CR>")
-vim.keymap.set("n", "<leader>zt", "<cmd>Telekasten goto_today<CR>")
-vim.keymap.set("n", "<leader>zd", "<cmd>Telekasten follow_link<CR>")
-vim.keymap.set("n", "<leader>zc", "<cmd>Telekasten new_note<CR>")
-vim.keymap.set("n", "<leader>zb", "<cmd>Telekasten show_backlinks<CR>")
-vim.keymap.set("n", "<leader>zl", "<cmd>Telekasten insert_link<CR>")
-vim.keymap.set("n", "<leader>z#", "<cmd>Telekasten show_tags<CR>")
+-- Obsidian.nvim
+vim.keymap.set("n", "<leader>zf", "<cmd>ObsidianQuickSwitch<cr>")
+vim.keymap.set("n", "<leader>zw", "<cmd>ObsidianSearch<cr>")
+vim.keymap.set("n", "<leader>zd", "<cmd>ObsidianFollowLink<cr>")
+vim.keymap.set("n", "<leader>zc", obsidian.createNoteWithDefaultTemplate)
+vim.keymap.set("n", "<leader>zb", "<cmd>ObsidianBacklinks<cr>")
+vim.keymap.set("x", "<leader>zl", "<cmd>ObsidianLink<cr>")
+vim.keymap.set("n", "<leader>z#", "<cmd>ObsidianTags<cr>")
+-- extract
+
+-- -- Telekasten
+-- vim.keymap.set("n", "<leader>zf", "<cmd>Telekasten find_notes<CR>")
+-- vim.keymap.set("n", "<leader>zw", "<cmd>Telekasten search_notes<CR>")
+-- vim.keymap.set("n", "<leader>zt", "<cmd>Telekasten goto_today<CR>")
+-- vim.keymap.set("n", "<leader>zd", "<cmd>Telekasten follow_link<CR>")
+-- vim.keymap.set("n", "<leader>zc", "<cmd>Telekasten new_note<CR>")
+-- vim.keymap.set("n", "<leader>zb", "<cmd>Telekasten show_backlinks<CR>")
+-- vim.keymap.set("n", "<leader>zl", "<cmd>Telekasten insert_link<CR>")
+-- vim.keymap.set("n", "<leader>z#", "<cmd>Telekasten show_tags<CR>")
 
 -- LSP
 vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
