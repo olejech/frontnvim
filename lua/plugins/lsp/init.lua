@@ -2,8 +2,8 @@ local lspconfig = require("lspconfig")
 local lua_ls = require("plugins.lsp.lua-ls")
 
 lspconfig.lua_ls.setup(lua_ls)
--- lspconfig.astro.setup({})
--- lspconfig.tailwindcss.setup({})
+lspconfig.astro.setup({})
+lspconfig.tailwindcss.setup({})
 -- lspconfig.stylelint_lsp.setup({
 --   settings = {
 --     stylelintplus = {
