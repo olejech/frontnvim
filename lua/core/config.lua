@@ -28,3 +28,4 @@ vim.cmd.language('en_US')
 vim.o.spelllang = "ru_ru,en_us"
 vim.opt.fillchars = { eob = " " }
 vim.opt.wrap = true
+vim.opt.conceallevel = 2

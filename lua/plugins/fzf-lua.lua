@@ -1,12 +1,15 @@
 local actions = require("fzf-lua").actions
 
 require("fzf-lua").setup({
-  actions = {
-    files = {
-      ["\\"]     = actions.file_split,
-      ["|"]      = actions.file_vsplit,
-      ["ctrl-q"] = actions.file_sel_to_qf,
+  files = {
+    actions = {
+      ["ctrl-h"] = { actions.toggle_hidden },
     }
   },
-
+  keymap = {
+    builtin = {
+      ["<C-d>"] = "preview-page-down",
+      ["<C-u>"] = "preview-page-up",
+    }
+  }
 })

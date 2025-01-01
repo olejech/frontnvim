@@ -43,31 +43,12 @@ require("obsidian").setup({
   attachments = {
     img_folder = "Files"
   },
-  ui = {
-    enable = false
-  },
   note_id_func = function(title)
     return title
   end,
-  note_frontmatter_func = function(note)
-    if note.title then
-      note:add_alias(note.title)
-    end
-
-    local datetime = os.date("%d-%m-%YT%H:%M")
-
-    local out = { date = datetime, aliases = note.aliases, tags = note.tags, }
-
-    if note.metadata ~= nil and not vim.tbl_isempty(note.metadata) then
-      for k, v in pairs(note.metadata) do
-        out[k] = v
-      end
-    end
-
-    return out
-  end,
   disable_frontmatter = true,
   mappings = {},
+  open_app_foreground = true
 })
 
 return {
