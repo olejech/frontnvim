@@ -1,7 +1,7 @@
 local home = vim.fn.expand(os.getenv("ZETTELKASTEN_PATH"))
 
 local function createNoteWithDefaultTemplate()
-  local TEMPLATE_FILENAME = "NoteTelekastenTemplate"
+  local TEMPLATE_FILENAME = "NoteTemplate"
   local obsidian = require("obsidian").get_client()
   local utils = require("obsidian.util")
 
@@ -19,17 +19,11 @@ local function createNoteWithDefaultTemplate()
     return
   end
   obsidian:open_note(note, { sync = true })
-  obsidian:write_note_to_buffer(note, { template = TEMPLATE_FILENAME })
-  vim.cmd("normal! 7k")
+  vim.cmd("ObsidianTemplate " .. TEMPLATE_FILENAME)
 end
 
 require("obsidian").setup({
-  workspaces = {
-    {
-      name = "personal",
-      path = home
-    },
-  },
+  dir = home,
   notes_subdir = "Base",
   daily_notes = {
     folder = "Daily",
@@ -37,18 +31,14 @@ require("obsidian").setup({
   templates = {
     folder = "Templates",
   },
-  picker = {
-    name = "fzf-lua",
-  },
   attachments = {
     img_folder = "Files"
   },
-  note_id_func = function(title)
-    return title
-  end,
+  picker = {
+    name = "fzf-lua",
+  },
   disable_frontmatter = true,
   mappings = {},
-  open_app_foreground = true
 })
 
 return {
