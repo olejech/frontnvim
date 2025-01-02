@@ -39,6 +39,9 @@ require("obsidian").setup({
   },
   disable_frontmatter = true,
   mappings = {},
+  follow_url_func = function(url)
+    vim.fn.jobstart({ "open", url })
+  end,
 })
 
 return {
