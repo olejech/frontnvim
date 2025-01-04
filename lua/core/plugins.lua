@@ -145,8 +145,8 @@ require("lazy").setup({
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
-  }
-
+  },
+  { 'ivanesmantovich/xkbswitch.nvim' }
 }, {
   defaults = {
     lazy = true,
