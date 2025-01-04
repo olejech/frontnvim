@@ -11,5 +11,8 @@ require("fzf-lua").setup({
       ["<C-d>"] = "preview-page-down",
       ["<C-u>"] = "preview-page-up",
     }
-  }
+  },
+  winopts = {
+    fullscreen = true,
+  },
 })
