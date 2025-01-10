@@ -1,7 +1,8 @@
 {
-  "reactStatelessProps": {
+  "markdown": {
     "prefix": "fm",
-    "body": "$CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE\nTags:\n\n---\n\n${1}\n\n---\n\n### Links\n",
+    "body": "---\ndate: $CURRENT_YEAR-$CURRENT_MONTH-$CURRENT_DATE $CURRENT_HOUR:$CURRENT_MINUTE\ntags: ${1}\n---\n\n${2}",
     "description": "Front matter note"
   }
 }
+  
