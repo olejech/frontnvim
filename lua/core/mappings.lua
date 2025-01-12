@@ -56,12 +56,12 @@ local function setup_telescope_mappings()
       ["<C-n>"] = telescope_actions.cycle_history_next,
       ["<C-p>"] = telescope_actions.cycle_history_prev,
       ["<C-k>"] = telescope_lga_actions.quote_prompt(),
-      ["|"] = telescope_actions.select_vertical,
+      -- ["|"] = telescope_actions.select_vertical,
       ["<C-e>"] = telescope_actions.send_selected_to_qflist + telescope_actions.open_qflist,
     },
     n = {
-      ["|"] = telescope_actions.select_vertical,
-      ["\\"] = telescope_actions.select_horizontal,
+      -- ["|"] = telescope_actions.select_vertical,
+      -- ["\\"] = telescope_actions.select_horizontal,
       ["<C-e>"] = telescope_actions.send_selected_to_qflist + telescope_actions.open_qflist,
     },
   }
