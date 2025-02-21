@@ -16,7 +16,7 @@ vim.keymap.set("n", "<leader>q", "<cmd>confirm q<cr>")
 vim.keymap.set("n", "|", "<cmd>vsplit<cr>")
 vim.keymap.set("n", "\\", "<cmd>split<cr>")
 vim.keymap.set("n", "<leader>c", "<cmd>bd!<cr>")
-vim.keymap.set("n", "<leader>bd", "<cmd>BDelete hidden<cr>")
+vim.keymap.set("n", "<leader>bd", "<cmd>%bd!<cr>")
 vim.keymap.set("n", "<leader>bp", "<cmd>bp<cr>")
 vim.keymap.set("n", "<leader>bn", "<cmd>bn<cr>")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
@@ -75,7 +75,7 @@ local function setup_neotree_mappings()
     ["/"] = "noop",
     ["g/"] = "fuzzy_finder",
     ["\\"] = "open_split",
-    ["|"] = "open_vsplit",
+    ["<c-v>"] = "open_vsplit",
     ["o"] = { "open", nowait = true },
     ["oc"] = "noop",
     ["od"] = "noop",
