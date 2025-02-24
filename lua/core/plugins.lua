@@ -54,8 +54,8 @@ require("lazy").setup({
   { "stevearc/dressing.nvim",          lazy = true,                               event = "InsertEnter" },
   { "RutaTang/quicknote.nvim",         event = "VeryLazy" },
   {
-    "Exafunction/codeium.vim",
-    event = "BufEnter",
+    "monkoose/neocodeium",
+    event = "VeryLazy",
   },
   {
     "otavioschwanck/arrow.nvim",

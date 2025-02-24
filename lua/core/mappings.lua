@@ -5,6 +5,7 @@ local builtin = require("telescope.builtin")
 local telescope_actions = require("telescope.actions")
 local telescope_lga_actions = require("telescope-live-grep-args.actions")
 local obsidian = require("plugins.obsidian-nvim")
+local neocodeium = require("neocodeium")
 
 local is_fullscreen = false
 
@@ -145,9 +146,16 @@ vim.keymap.set("n", "[n", quicknote.JumpToPreviousNote)
 vim.keymap.set("n", "<leader>nt", quicknote.ToggleNoteSigns)
 
 -- Codeium
-vim.keymap.set("i", "<C-c><cr>", vim.fn["codeium#Accept"], { expr = true })
-vim.keymap.set("i", "<C-c>;", function() return vim.fn["codeium#CycleCompletions"](1) end, { expr = true })
-vim.keymap.set('i', '<C-c>x', function() return vim.fn['codeium#Clear']() end, { expr = true, silent = true })
+vim.keymap.set("i", "<C-c><cr>", neocodeium.accept)
+vim.keymap.set('i', '<C-c>p', function() neocodeium.cycle_or_complete(-1) end)
+vim.keymap.set('i', '<C-c>n', function() neocodeium.cycle_or_complete() end)
+vim.keymap.set('i', '<C-c>w', function()
+  neocodeium.accept_word()
+end)
+vim.keymap.set('i', '<C-c>l', function()
+  neocodeium.accept_line()
+end)
+
 
 -- Arrow
 vim.keymap.set("n", "H", require("arrow.persist").previous)
