@@ -24,14 +24,19 @@ local function createNoteWithDefaultTemplate(isAnkiNote)
 	end
 	obsidian:open_note(note, { sync = true })
 	if isAnkiNote then
-		vim.cmd("ObsidianTemplate " .. TEMPLATE_ANKI_FILENAME)
+		vim.cmd("Obsidian template " .. TEMPLATE_ANKI_FILENAME)
 	else
-		vim.cmd("ObsidianTemplate " .. TEMPLATE_FILENAME)
+		vim.cmd("Obsidian template " .. TEMPLATE_FILENAME)
 	end
 end
 
 require("obsidian").setup({
-	dir = home,
+	workspaces = {
+		{
+			name = "personal",
+			path = home,
+		},
+	},
 	notes_subdir = "Base",
 	daily_notes = {
 		folder = "Daily",
@@ -46,7 +51,6 @@ require("obsidian").setup({
 		name = "fzf-lua",
 	},
 	disable_frontmatter = true,
-	mappings = {},
 	completion = {
 		nvim_cmp = false,
 		blink = true,
@@ -58,6 +62,7 @@ require("obsidian").setup({
 	note_id_func = function(title)
 		return title
 	end,
+	legacy_commands = false,
 })
 
 return {

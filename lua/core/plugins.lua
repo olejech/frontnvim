@@ -25,6 +25,7 @@ require("lazy").setup({
 	{
 		"nvim-treesitter/nvim-treesitter",
 		dependencies = { "JoosepAlviste/nvim-ts-context-commentstring" },
+		branch = "master",
 	},
 	{
 		"neovim/nvim-lspconfig",
@@ -46,12 +47,12 @@ require("lazy").setup({
 		"monkoose/neocodeium",
 		event = "VeryLazy",
 	},
-	{
-		"otavioschwanck/arrow.nvim",
-		dependencies = {
-			{ "nvim-tree/nvim-web-devicons" },
-		},
-	},
+	-- {
+	-- 	"otavioschwanck/arrow.nvim",
+	-- 	dependencies = {
+	-- 		{ "nvim-tree/nvim-web-devicons" },
+	-- 	},
+	-- },
 	{
 		"folke/todo-comments.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
@@ -87,14 +88,14 @@ require("lazy").setup({
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
 	{ "ivanesmantovich/xkbswitch.nvim" },
-	{
-		"olimorris/codecompanion.nvim",
-		config = true,
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-treesitter/nvim-treesitter",
-		},
-	},
+	-- {
+	-- 	"olimorris/codecompanion.nvim",
+	-- 	config = true,
+	-- 	dependencies = {
+	-- 		"nvim-lua/plenary.nvim",
+	-- 		"nvim-treesitter/nvim-treesitter",
+	-- 	},
+	-- },
 	{
 		"saghen/blink.cmp",
 		version = "*",
@@ -113,10 +114,10 @@ require("lazy").setup({
 			"saghen/blink.cmp",
 		},
 	},
-	{
-		"lukas-reineke/indent-blankline.nvim",
-		main = "ibl",
-	},
+	-- {
+	-- 	"lukas-reineke/indent-blankline.nvim",
+	-- 	main = "ibl",
+	-- },
 	{
 		"davidmh/mdx.nvim",
 		config = true,

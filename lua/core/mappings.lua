@@ -194,15 +194,15 @@ end)
 -- vim.keymap.set("n", "<leader>ac", require("arrow.persist").toggle)
 
 -- Obsidian.nvim
-vim.keymap.set("n", "<leader>zf", "<cmd>ObsidianQuickSwitch<cr>")
-vim.keymap.set("n", "<leader>zw", "<cmd>ObsidianSearch<cr>")
-vim.keymap.set("n", "<leader>zd", "<cmd>ObsidianFollowLink<cr>")
-vim.keymap.set("n", "<leader>z|", ":vsplit<cr> :ObsidianFollowLink<cr>")
+vim.keymap.set("n", "<leader>zf", "<cmd>Obsidian quick_switch<cr>")
+vim.keymap.set("n", "<leader>zw", "<cmd>Obsidian search<cr>")
+vim.keymap.set("n", "<leader>zd", "<cmd>Obsidian follow_link<cr>")
+vim.keymap.set("n", "<leader>z|", ":vsplit<cr> :Obsidian follow_link<cr>")
 vim.keymap.set("n", "<leader>zc", obsidian.createNoteWithDefaultTemplate)
 vim.keymap.set("n", "<leader>zC", obsidian.createAnkiNoteWithDefaultTemplate)
-vim.keymap.set("n", "<leader>zb", "<cmd>ObsidianBacklinks<cr>")
-vim.keymap.set("x", "<leader>zl", "<cmd>ObsidianLink<cr>")
-vim.keymap.set("n", "<leader>zt", "<cmd>ObsidianTags<cr>")
+vim.keymap.set("n", "<leader>zb", "<cmd>Obsidian backlinks<cr>")
+vim.keymap.set("x", "<leader>zl", "<cmd>Obsidian link<cr>")
+vim.keymap.set("n", "<leader>zt", "<cmd>Obsidian tags<cr>")
 
 -- Logsitter
 vim.keymap.set("n", "<leader>ll", require("logsitter").log)
