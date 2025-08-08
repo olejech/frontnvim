@@ -36,11 +36,6 @@ require("lazy").setup({
 		build = ":MasonUpdate",
 		event = "VeryLazy",
 	},
-	-- {
-	-- 	"nvim-telescope/telescope.nvim",
-	-- 	dependencies = { "nvim-lua/plenary.nvim", "nvim-telescope/telescope-live-grep-args.nvim" },
-	-- 	event = "BufEnter",
-	-- },
 	{ "windwp/nvim-ts-autotag", event = "InsertEnter" },
 	{ "numToStr/Comment.nvim", event = "InsertEnter" },
 	{ "lewis6991/gitsigns.nvim" },
@@ -82,15 +77,6 @@ require("lazy").setup({
 		lazy = false,
 		priority = 1000,
 	},
-	-- {
-	-- 	"danielfalk/smart-open.nvim",
-	-- 	branch = "0.2.x",
-	-- 	dependencies = {
-	-- 		"kkharji/sqlite.lua",
-	-- 		{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-	-- 		{ "nvim-telescope/telescope-fzy-native.nvim" },
-	-- 	},
-	-- },
 	{
 		"pmizio/typescript-tools.nvim",
 		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },

@@ -1,9 +1,6 @@
 local quicknote = require("quicknote")
 local smart_splits = require("smart-splits")
 local gitsigns = require("gitsigns")
--- local builtin = require("telescope.builtin")
--- local telescope_actions = require("telescope.actions")
--- local telescope_lga_actions = require("telescope-live-grep-args.actions")
 local obsidian = require("plugins.obsidian-nvim")
 local neocodeium = require("neocodeium")
 local fzfLua = require("fzf-lua")
@@ -79,44 +76,8 @@ vim.keymap.set("n", "<leader>fm", fzfLua.marks)
 vim.keymap.set("n", "<leader>ft", fzfLua.tabs)
 vim.keymap.set("n", "<leader>fh", fzfLua.helptags)
 
--- Telescope
--- vim.keymap.set("n", "<leader>ff", function()
--- 	require("telescope").extensions.smart_open.smart_open()
--- end, { noremap = true, silent = true })
--- vim.keymap.set("n", "<leader>fw", require("telescope").extensions.live_grep_args.live_grep_args, {})
--- vim.keymap.set("n", "<leader>fb", builtin.buffers, {})
--- vim.keymap.set("n", "<leader>fc", builtin.grep_string)
--- vim.keymap.set("n", "gr", function()
--- 	builtin.lsp_references({ include_declaration = false })
--- end, { noremap = true, silent = true })
--- vim.keymap.set("n", "<leader>gb", function()
--- 	builtin.git_bcommits({
--- 		use_file_path = true,
--- 		git_command = {
--- 			"git",
--- 			"log",
--- 			"--pretty=%h %s <%cn> (%cr)",
--- 			"--follow",
--- 		},
--- 	})
--- end)
--- vim.keymap.set("n", "<leader>ft", "<cmd>TodoTelescope keywords=FIX<cr>")
--- vim.keymap.set("n", "<leader>fr", builtin.resume)
 vim.keymap.set("n", "<leader>fn", "<cmd>:cnext<cr>")
 vim.keymap.set("n", "<leader>fp", "<cmd>:cprevious<cr>")
--- local function setup_telescope_mappings()
--- 	return {
--- 		i = {
--- 			["<C-n>"] = telescope_actions.cycle_history_next,
--- 			["<C-p>"] = telescope_actions.cycle_history_prev,
--- 			["<C-k>"] = telescope_lga_actions.quote_prompt(),
--- 			["<C-e>"] = telescope_actions.send_selected_to_qflist + telescope_actions.open_qflist,
--- 		},
--- 		n = {
--- 			["<C-e>"] = telescope_actions.send_selected_to_qflist + telescope_actions.open_qflist,
--- 		},
--- 	}
--- end
 
 -- Neotree
 vim.keymap.set("n", "<leader>e", "<cmd>Neotree reveal<CR>")
@@ -200,8 +161,6 @@ vim.keymap.set("n", "<leader>nc", quicknote.NewNoteAtCWD)
 vim.keymap.set("n", "<leader>nC", quicknote.NewNoteAtCurrentLine)
 vim.keymap.set("n", "<leader>no", quicknote.OpenNoteAtCurrentLine)
 vim.keymap.set("n", "<leader>nd", quicknote.DeleteNoteAtCurrentLine)
--- vim.keymap.set("n", "<leader>nf", ":Telescope quicknote<cr>")
--- vim.keymap.set("n", "<leader>nn", ":Telescope quicknote<cr>quicknote")
 vim.keymap.set("n", "<leader>nf", function()
 	fzfLua.files({ cwd = ".quicknote" })
 end)
@@ -251,5 +210,4 @@ vim.keymap.set("n", "<leader>lc", require("logsitter").clear_buf)
 
 return {
 	neotree = setup_neotree_mappings,
-	-- telescope = setup_telescope_mappings,
 }

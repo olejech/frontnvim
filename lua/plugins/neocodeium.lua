@@ -1,6 +1,6 @@
 local blink = require("blink.cmp")
 
-local disabledFileTypes = { --[[ TelescopePrompt = false, ]]
+local disabledFileTypes = {
 	["neo-tree-popup"] = false,
 }
 local enabledFiletypes = { "javascript", "typescript", "javascriptreact", "typescriptreact", "astro", "lua" }
