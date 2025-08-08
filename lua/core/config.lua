@@ -24,7 +24,7 @@ vim.opt.laststatus = 0
 vim.opt.winbar = "%f%m"
 vim.opt.pumheight = 10
 vim.opt.cursorline = true
-vim.cmd.language('en_US')
+vim.cmd.language("en_US")
 vim.opt.spelllang = "ru_ru,en_us"
 vim.opt.fillchars = { eob = " " }
 vim.opt.wrap = true

@@ -4,35 +4,35 @@ local lua_ls = require("plugins.lsp.lua-ls")
 lspconfig.lua_ls.setup(lua_ls)
 lspconfig.astro.setup({})
 lspconfig.tailwindcss.setup({})
--- lspconfig.stylelint_lsp.setup({
---   settings = {
---     stylelintplus = {
---       autoFixOnSave = true,
---     },
---   },
---   filetypes = { "css", "scss" }
+lspconfig.eslint.setup({})
+lspconfig.gopls.setup({})
+
+-- vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
+-- 	border = "rounded",
+-- })
+--
+-- vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
+-- 	border = "rounded",
+-- })
+--
+-- vim.diagnostic.config({
+-- 	float = { border = "rounded" },
 -- })
 
--- Use LspAttach autocommand to only map the following keys
--- after the language server attaches to the current buffer
-vim.api.nvim_create_autocmd("LspAttach", {
-  group = vim.api.nvim_create_augroup("UserLspConfig", {}),
-  callback = function(ev)
-    -- Enable completion triggered by <c-x><c-o>
-    vim.bo[ev.buf].omnifunc = "v:lua.vim.lsp.omnifunc"
-
-    local opts = { buffer = ev.buf }
-    vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-    vim.keymap.set("n", "gt", vim.lsp.buf.type_definition, opts)
-    vim.keymap.set("n", "gD", ":vsplit<cr> :lua vim.lsp.buf.definition()<cr>", opts)
-    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-    vim.keymap.set("n", "<leader>li", vim.lsp.buf.implementation, opts)
-    vim.keymap.set("n", "<space>ld", vim.diagnostic.open_float, opts)
-    vim.keymap.set({ "n", "v" }, "<leader>la", vim.lsp.buf.code_action, opts)
-    vim.keymap.set("n", "<leader>lr", vim.lsp.buf.references, opts)
-  end,
-})
-
-vim.diagnostic.config({
-  float = { border = "rounded" },
-})
+-- patch lsp floating window with borders
+local orig = vim.lsp.util.open_floating_preview
+vim.lsp.util.open_floating_preview = function(contents, syntax, opts, ...)
+	opts = opts or {}
+	opts.border = opts.border
+		or {
+			{ "╭", "FloatBorder" },
+			{ "─", "FloatBorder" },
+			{ "╮", "FloatBorder" },
+			{ "│", "FloatBorder" },
+			{ "╯", "FloatBorder" },
+			{ "─", "FloatBorder" },
+			{ "╰", "FloatBorder" },
+			{ "│", "FloatBorder" },
+		}
+	return orig(contents, syntax, opts, ...)
+end

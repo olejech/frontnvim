@@ -6,33 +6,34 @@ vim.fn.sign_define("DiagnosticSignInfo", { text = " ", texthl = "DiagnosticSi
 vim.fn.sign_define("DiagnosticSignHint", { text = " ", texthl = "DiagnosticSignHint" })
 
 require("neo-tree").setup({
-  default_component_configs = {
-    file_size = { enabled = false },
-    type = { enabled = false },
-    last_modified = { enabled = false },
-    created = { enabled = false },
-    git_status = {
-      symbols = {
-        deleted   = "✖",
-        renamed   = "󰁕",
-        untracked = "",
-        ignored   = "",
-        unstaged  = "",
-        staged    = "",
-        conflict  = "",
-      }
-    },
-  },
-  window = {
-    mappings = mappings.neotree(),
-    position = "float",
-  },
-  filesystem = {
-    follow_current_file = {
-      enabled = true
-    },
-  },
-  hide_root_node = true,
-  popup_border_style = "rounded",
-  enable_diagnostics = false,
+	default_component_configs = {
+		file_size = { enabled = false },
+		type = { enabled = false },
+		last_modified = { enabled = false },
+		created = { enabled = false },
+		git_status = {
+			symbols = {
+				deleted = "✖",
+				renamed = "󰁕",
+				untracked = "",
+				ignored = "",
+				unstaged = "",
+				staged = "",
+				conflict = "",
+			},
+		},
+	},
+	window = {
+		mappings = mappings.neotree(),
+		position = "float",
+	},
+	filesystem = {
+		follow_current_file = {
+			enabled = true,
+		},
+	},
+	hide_root_node = true,
+	popup_border_style = "rounded",
+	enable_diagnostics = false,
+	enable_git_status = false,
 })
