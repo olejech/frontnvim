@@ -57,7 +57,7 @@ vim.keymap.set("n", "dd", function()
 end, { expr = true })
 
 -- Fzf-lua
-vim.keymap.set("n", "<leader>ff", fzfLua.files)
+vim.keymap.set("n", "<leader>ff", ":FzfLua frecency<cr>")
 vim.keymap.set("n", "<leader>fw", fzfLua.live_grep)
 vim.keymap.set("n", "<leader>fb", fzfLua.buffers)
 vim.keymap.set("n", "<leader>fc", fzfLua.grep_cword)

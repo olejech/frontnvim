@@ -87,6 +87,10 @@ require("lazy").setup({
 		"ibhagwan/fzf-lua",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
+	{
+		"elanmed/fzf-lua-frecency.nvim",
+		dependencies = { "ibhagwan/fzf-lua" },
+	},
 	{ "ivanesmantovich/xkbswitch.nvim" },
 	-- {
 	-- 	"olimorris/codecompanion.nvim",
