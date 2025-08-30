@@ -2,6 +2,7 @@ local actions = require("fzf-lua").actions
 local fzf = require("fzf-lua")
 require("fzf-lua-frecency").setup({
 	cwd_only = true,
+	display_score = false,
 })
 
 fzf.setup({
