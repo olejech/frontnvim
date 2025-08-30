@@ -76,9 +76,6 @@ vim.keymap.set("n", "<leader>fm", fzfLua.marks)
 vim.keymap.set("n", "<leader>ft", fzfLua.tabs)
 vim.keymap.set("n", "<leader>fh", fzfLua.helptags)
 
-vim.keymap.set("n", "<leader>fn", "<cmd>:cnext<cr>")
-vim.keymap.set("n", "<leader>fp", "<cmd>:cprevious<cr>")
-
 -- Neotree
 vim.keymap.set("n", "<leader>e", "<cmd>Neotree reveal<CR>")
 local function setup_neotree_mappings()
