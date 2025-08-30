@@ -1,5 +1,3 @@
-local blink = require("blink.cmp")
-
 local disabledFileTypes = {
 	["neo-tree-popup"] = false,
 }
@@ -9,7 +7,7 @@ local filter = function(bufnr)
 	local isAcceptFileTypes =
 		vim.tbl_contains(enabledFiletypes, vim.api.nvim_get_option_value("filetype", { buf = bufnr }))
 
-	return isAcceptFileTypes and not blink.is_visible()
+	return isAcceptFileTypes
 end
 
 require("neocodeium").setup({
