@@ -3,7 +3,7 @@ local smart_splits = require("smart-splits")
 local gitsigns = require("gitsigns")
 local obsidian = require("plugins.obsidian-nvim")
 local neocodeium = require("neocodeium")
-local fzfLua = require("fzf-lua")
+local snacks = require("snacks")
 
 local is_fullscreen = false
 
@@ -56,25 +56,23 @@ vim.keymap.set("n", "dd", function()
 	return "dd"
 end, { expr = true })
 
--- Fzf-lua
-vim.keymap.set("n", "<leader>ff", ":FzfLua frecency<cr>")
-vim.keymap.set("n", "<leader>fw", fzfLua.live_grep)
-vim.keymap.set("n", "<leader>fb", fzfLua.buffers)
-vim.keymap.set("n", "<leader>fc", fzfLua.grep_cword)
-vim.keymap.set("n", "<leader>fr", function()
-	fzfLua.lsp_references({
-		includeDeclaration = false,
-		-- fzf_opts = {
-		-- 	["--delimiter"] = "[\\):]",
-		-- 	["--with-nth"] = "1",
-		-- },
+vim.keymap.set("n", "<leader>ff", function()
+	snacks.picker.smart({
+		multi = { "buffers", "files" },
 	})
 end)
-vim.keymap.set("n", "<leader>fg", fzfLua.git_bcommits)
-vim.keymap.set("n", "<leader>fl", fzfLua.resume)
-vim.keymap.set("n", "<leader>fm", fzfLua.marks)
-vim.keymap.set("n", "<leader>ft", fzfLua.tabs)
-vim.keymap.set("n", "<leader>fh", fzfLua.helptags)
+vim.keymap.set("n", "<leader>fw", snacks.picker.grep)
+vim.keymap.set("n", "<leader>fb", snacks.picker.buffers)
+vim.keymap.set("n", "<leader>fc", snacks.picker.grep_word)
+vim.keymap.set("n", "<leader>fr", function()
+	snacks.picker.lsp_references({
+		includeDeclaration = false,
+	})
+end)
+vim.keymap.set("n", "<leader>fg", snacks.picker.git_log) -- аналог git_bcommits
+vim.keymap.set("n", "<leader>fl", snacks.picker.resume)
+vim.keymap.set("n", "<leader>fm", snacks.picker.marks)
+vim.keymap.set("n", "<leader>fh", snacks.picker.help)
 
 -- Neotree
 vim.keymap.set("n", "<leader>e", "<cmd>Neotree reveal<CR>")
@@ -159,13 +157,28 @@ vim.keymap.set("n", "<leader>nC", quicknote.NewNoteAtCurrentLine)
 vim.keymap.set("n", "<leader>no", quicknote.OpenNoteAtCurrentLine)
 vim.keymap.set("n", "<leader>nd", quicknote.DeleteNoteAtCurrentLine)
 vim.keymap.set("n", "<leader>nf", function()
-	fzfLua.files({ cwd = ".quicknote" })
+	snacks.picker.files({
+		dirs = { ".quicknote" },
+		formatters = { file = { filename_only = true } },
+	})
 end)
-vim.keymap.set(
-	"n",
-	"<leader>nn",
-	":lua require('fzf-lua').files({cwd = '.quicknote', cmd = 'fd --type f --extension md', fzf_opts = { ['--query'] = 'quicknote.md' } })<cr>"
-)
+vim.keymap.set("n", "<leader>nf", function()
+	snacks.picker.files({
+		dirs = { ".quicknote" },
+		formatters = { file = { filename_only = true } },
+	})
+end)
+vim.keymap.set("n", "<leader>nn", function()
+	vim.system({ "fd", "-t", "f", "quicknote.md", ".quicknote" }, { text = true }, function(obj)
+		local path = vim.split(obj.stdout, "\n", { trimempty = true })[1]
+		if path then
+			vim.schedule(function()
+				vim.cmd.edit(path)
+			end)
+		end
+	end)
+end, { desc = "Открыть quicknote.md из .quicknote" })
+
 vim.keymap.set("n", "]n", quicknote.JumpToNextNote)
 vim.keymap.set("n", "[n", quicknote.JumpToPreviousNote)
 vim.keymap.set("n", "<leader>nt", quicknote.ToggleNoteSigns)

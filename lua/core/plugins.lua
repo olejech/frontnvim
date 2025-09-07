@@ -1,4 +1,5 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+local snacksOpts = require("plugins.snacks")
 
 if not vim.loop.fs_stat(lazypath) then
 	vim.fn.system({
@@ -47,12 +48,6 @@ require("lazy").setup({
 		"monkoose/neocodeium",
 		event = "VeryLazy",
 	},
-	-- {
-	-- 	"otavioschwanck/arrow.nvim",
-	-- 	dependencies = {
-	-- 		{ "nvim-tree/nvim-web-devicons" },
-	-- 	},
-	-- },
 	{
 		"folke/todo-comments.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
@@ -70,10 +65,6 @@ require("lazy").setup({
 		event = "InsertEnter",
 	},
 	{
-		"phelipetls/jsonpath.nvim",
-		event = "BufEnter",
-	},
-	{
 		"AlexvZyl/nordic.nvim",
 		lazy = false,
 		priority = 1000,
@@ -83,14 +74,7 @@ require("lazy").setup({
 		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
 	},
 	{ "gaelph/logsitter.nvim", dependencies = { "nvim-treesitter/nvim-treesitter" } },
-	{
-		"ibhagwan/fzf-lua",
-		dependencies = { "nvim-tree/nvim-web-devicons" },
-	},
-	{
-		"elanmed/fzf-lua-frecency.nvim",
-		dependencies = { "ibhagwan/fzf-lua" },
-	},
+
 	{ "ivanesmantovich/xkbswitch.nvim" },
 	-- {
 	-- 	"olimorris/codecompanion.nvim",
@@ -118,10 +102,6 @@ require("lazy").setup({
 			"saghen/blink.cmp",
 		},
 	},
-	-- {
-	-- 	"lukas-reineke/indent-blankline.nvim",
-	-- 	main = "ibl",
-	-- },
 	{
 		"davidmh/mdx.nvim",
 		config = true,
@@ -131,6 +111,13 @@ require("lazy").setup({
 	{
 		"Wansmer/langmapper.nvim",
 		lazy = false,
+	},
+	{
+		"folke/snacks.nvim",
+		priority = 1000,
+		lazy = false,
+		---@type snacks.Config
+		opts = snacksOpts,
 	},
 }, {
 	defaults = {

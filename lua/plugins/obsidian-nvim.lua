@@ -48,7 +48,7 @@ require("obsidian").setup({
 		img_folder = "Files",
 	},
 	picker = {
-		name = "fzf-lua",
+		name = "snacks.pick",
 	},
 	disable_frontmatter = true,
 	completion = {
