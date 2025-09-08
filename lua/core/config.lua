@@ -30,3 +30,4 @@ vim.opt.fillchars = { eob = " " }
 vim.opt.wrap = true
 vim.opt.conceallevel = 2
 vim.opt.spell = true
+vim.opt.winborder = "rounded"

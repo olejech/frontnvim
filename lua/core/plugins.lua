@@ -15,15 +15,6 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	{
-		"nvim-neo-tree/neo-tree.nvim",
-		-- branch = "v3.x",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons",
-			"MunifTanjim/nui.nvim",
-		},
-	},
-	{
 		"nvim-treesitter/nvim-treesitter",
 		dependencies = { "JoosepAlviste/nvim-ts-context-commentstring" },
 		branch = "master",
@@ -74,16 +65,7 @@ require("lazy").setup({
 		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
 	},
 	{ "gaelph/logsitter.nvim", dependencies = { "nvim-treesitter/nvim-treesitter" } },
-
 	{ "ivanesmantovich/xkbswitch.nvim" },
-	-- {
-	-- 	"olimorris/codecompanion.nvim",
-	-- 	config = true,
-	-- 	dependencies = {
-	-- 		"nvim-lua/plenary.nvim",
-	-- 		"nvim-treesitter/nvim-treesitter",
-	-- 	},
-	-- },
 	{
 		"saghen/blink.cmp",
 		version = "*",

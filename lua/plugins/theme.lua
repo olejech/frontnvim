@@ -1,7 +1,5 @@
 require("nordic").setup({
 	on_highlight = function(highlights, palette)
-		highlights.NeoTreeGitModified = { fg = palette.orange.base }
-		highlights.NeoTreeGitUntracked = { fg = palette.green.base }
 		highlights.Visual = { bg = palette.gray2 }
 		highlights["@markup.raw.markdown_inline"] = { bg = palette.gray3 }
 		highlights.CurSearch = { bg = palette.red.base }

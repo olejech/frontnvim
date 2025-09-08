@@ -1,6 +1,3 @@
-local disabledFileTypes = {
-	["neo-tree-popup"] = false,
-}
 local enabledFiletypes = { "javascript", "typescript", "javascriptreact", "typescriptreact", "astro", "lua" }
 
 local filter = function(bufnr)
@@ -11,7 +8,6 @@ local filter = function(bufnr)
 end
 
 require("neocodeium").setup({
-	filetypes = disabledFileTypes,
 	filter = filter,
 	completion = {
 		menu = {

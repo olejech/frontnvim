@@ -1,6 +1,11 @@
 return {
 	picker = {
-		enabled = true,
+		enabled = false,
+		sources = {
+			explorer = {
+				auto_close = true,
+			},
+		},
 		layouts = {
 			default = {
 				fullscreen = true,

@@ -10,7 +10,6 @@ require("plugins.langmapper")
 require("core.mappings")
 
 require("plugins.theme")
-require("plugins.neo-tree")
 require("plugins.treesitter")
 require("plugins.lsp")
 require("plugins.typescript-tools")
