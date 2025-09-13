@@ -1,5 +1,5 @@
 local quicknote = require("quicknote")
-local smart_splits = require("smart-splits")
+-- local smart_splits = require("smart-splits")
 local gitsigns = require("gitsigns")
 local obsidian = require("plugins.obsidian-nvim")
 local neocodeium = require("neocodeium")
@@ -11,6 +11,7 @@ vim.g.mapleader = " "
 
 -- Custom
 vim.keymap.set("n", "<leader>w", ":silent! wa<cr>", { silent = true })
+vim.keymap.set("n", "<leader>W", "<cmd>noautocmd write<cr>")
 vim.keymap.set("n", "<leader>q", "<cmd>confirm q<cr>")
 vim.keymap.set("n", "|", "<cmd>vsplit<cr>")
 vim.keymap.set("n", "\\", "<cmd>split<cr>")
@@ -111,12 +112,14 @@ vim.keymap.set("n", "<leader>jf", "<cmd>JestFile<cr>")
 -- Resize
 vim.keymap.set("n", "<C-s>k", "<cmd>resize -20<cr>")
 vim.keymap.set("n", "<C-s>j", "<cmd>resize +20<cr>")
-vim.keymap.set("n", "<C-s>h", function()
-	smart_splits.resize_left(40)
-end)
-vim.keymap.set("n", "<C-s>l", function()
-	smart_splits.resize_right(40)
-end)
+-- vim.keymap.set("n", "<C-s>h", function()
+-- 	smart_splits.resize_left(40)
+-- end)
+-- vim.keymap.set("n", "<C-s>l", function()
+-- 	smart_splits.resize_right(40)
+-- end
+vim.keymap.set("n", "<C-s>h", "<cmd>vertical resize -20<cr>")
+vim.keymap.set("n", "<C-s>l", "<cmd>vertical resize +20<cr>")
 
 vim.keymap.set("n", "<C-s>f", function()
 	if is_fullscreen then
@@ -130,10 +133,10 @@ vim.keymap.set("n", "<C-s>f", function()
 end)
 
 -- Smart splits
-vim.keymap.set("n", "<C-l>", smart_splits.move_cursor_right)
-vim.keymap.set("n", "<C-k>", smart_splits.move_cursor_up)
-vim.keymap.set("n", "<C-j>", smart_splits.move_cursor_down)
-vim.keymap.set("n", "<C-h>", smart_splits.move_cursor_left)
+vim.keymap.set("n", "<C-l>", ":wincmd l<cr>", { silent = true })
+vim.keymap.set("n", "<C-k>", ":wincmd k<cr>", { silent = true })
+vim.keymap.set("n", "<C-j>", ":wincmd j<cr>", { silent = true })
+vim.keymap.set("n", "<C-h>", ":wincmd h<cr>", { silent = true })
 
 -- Quicknote
 vim.keymap.set("n", "<leader>nc", quicknote.NewNoteAtCWD)
