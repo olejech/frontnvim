@@ -31,3 +31,4 @@ vim.opt.wrap = true
 vim.opt.conceallevel = 2
 vim.opt.spell = true
 vim.opt.winborder = "rounded"
+vim.diagnostic.config({ signs = false })
