@@ -193,3 +193,17 @@ vim.keymap.set("n", "<leader>zt", "<cmd>Obsidian tags<cr>")
 -- Logsitter
 vim.keymap.set("n", "<leader>ll", require("logsitter").log)
 vim.keymap.set("n", "<leader>lc", require("logsitter").clear_buf)
+
+-- Surround
+vim.keymap.set("v", "sa(", "<esc>`>a)<esc>`<i(<esc>")
+vim.keymap.set("v", "sa)", "<esc>`>a)<esc>`<i(<esc>")
+vim.keymap.set("v", "sa{", "<esc>`>a}<esc>`<i{<esc>")
+vim.keymap.set("v", "sa}", "<esc>`>a}<esc>`<i{<esc>")
+vim.keymap.set("v", "sa[", "<esc>`>a]<esc>`<i[<esc>")
+vim.keymap.set("v", "sa]", "<esc>`>a]<esc>`<i[<esc>")
+vim.keymap.set("v", "sa<", "<esc>`>a><esc>`<i<<esc>")
+vim.keymap.set("v", "sa>", "<esc>`>a><esc>`<i<<esc>")
+vim.keymap.set("v", 'sa"', '<esc>`>a"<esc>`<i"<esc>')
+vim.keymap.set("v", "sa'", "<esc>`>a'<esc>`<i'<esc>")
+vim.keymap.set("v", "sa`", "<esc>`>a`<esc>`<i`<esc>")
+vim.keymap.set("v", "sa*", "<esc>`>a**<esc>`<i**<esc>")
