@@ -3,10 +3,9 @@ local home = vim.fn.expand(os.getenv("ZETTELKASTEN_PATH"))
 local function createNoteWithDefaultTemplate(isAnkiNote)
 	local TEMPLATE_FILENAME = "NoteTemplate"
 	local TEMPLATE_ANKI_FILENAME = "NoteAnkiTemplate"
-	local obsidian = require("obsidian").get_client()
 	local utils = require("obsidian.util")
+	local Note = require("obsidian.note")
 
-	local note
 	local FLASHCARDS_PATH = "Flashcards/"
 	local title = utils.input("Enter title or path (optional): ")
 	if not title then
@@ -17,12 +16,17 @@ local function createNoteWithDefaultTemplate(isAnkiNote)
 		title = FLASHCARDS_PATH .. title
 	end
 
-	note = obsidian:create_note({ title = title, no_write = true })
+	local note = Note.create({
+		title = title,
+		should_write = false,
+	})
 
 	if not note then
 		return
 	end
-	obsidian:open_note(note, { sync = true })
+
+	note:open({ sync = true })
+
 	if isAnkiNote then
 		vim.cmd("Obsidian template " .. TEMPLATE_ANKI_FILENAME)
 	else
