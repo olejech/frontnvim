@@ -13,8 +13,8 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>w", ":silent! wa<cr>", { silent = true })
 vim.keymap.set("n", "<leader>W", "<cmd>noautocmd write<cr>")
 vim.keymap.set("n", "<leader>q", "<cmd>confirm q<cr>")
-vim.keymap.set("n", "|", "<cmd>vsplit<cr>")
-vim.keymap.set("n", "\\", "<cmd>split<cr>")
+-- vim.keymap.set("n", "|", "<cmd>vsplit<cr>")
+-- vim.keymap.set("n", "\\", "<cmd>split<cr>")
 vim.keymap.set("n", "<leader>c", "<cmd>bd<cr>")
 vim.keymap.set("n", "<leader>bd", ":%bd!|e#<cr>")
 -- vim.keymap.set("n", "<leader>bp", "<cmd>bp<cr>")
@@ -44,7 +44,7 @@ vim.keymap.set("n", "<leader>9", "9gt")
 vim.keymap.set("n", "<leader>0", ":tabprev<cr>")
 vim.keymap.set("n", "<leader>be", ":bufdo e<cr>")
 
--- Remap default behavior (langmapper break this behavior)
+-- TODO: useless, remove -> Remap default behavior (langmapper break this behavior)
 vim.keymap.set("n", "/", "/", { noremap = true })
 vim.keymap.set("n", ".", ".", { noremap = true })
 
@@ -74,7 +74,6 @@ end)
 vim.keymap.set("n", "<leader>fg", snacks.picker.git_log_file)
 vim.keymap.set("n", "<leader>fl", snacks.picker.resume)
 vim.keymap.set("n", "<leader>fm", snacks.picker.marks)
-vim.keymap.set("n", "<leader>fh", snacks.picker.help)
 
 -- Explorer
 
