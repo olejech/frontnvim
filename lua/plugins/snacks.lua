@@ -1,6 +1,6 @@
 return {
 	picker = {
-		enabled = false,
+		enabled = true,
 		sources = {
 			explorer = {
 				auto_close = true,
