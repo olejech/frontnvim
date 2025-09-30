@@ -1,9 +1,12 @@
-local neocodeium = require("neocodeium")
-
 require("blink.cmp").setup({
 	keymap = {
 		preset = "default",
 		["<CR>"] = { "accept", "fallback" },
+		["<C-f>"] = {
+			function(cmp)
+				cmp.show()
+			end,
+		},
 	},
 	appearance = {
 		-- Will be removed in a future release
@@ -53,11 +56,4 @@ require("blink.cmp").setup({
 			["<CR>"] = { "accept_and_enter", "fallback" },
 		},
 	},
-})
-
-vim.api.nvim_create_autocmd("User", {
-	pattern = "BlinkCmpMenuOpen",
-	callback = function()
-		neocodeium.clear()
-	end,
 })
