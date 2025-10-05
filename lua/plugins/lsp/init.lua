@@ -1,26 +1,9 @@
-local lspconfig = require("lspconfig")
-local lua_ls = require("plugins.lsp.lua-ls")
+local lua_ls_config = require("plugins.lsp.lua-ls")
 
-lspconfig.lua_ls.setup(lua_ls)
-lspconfig.astro.setup({})
-lspconfig.tailwindcss.setup({})
-lspconfig.eslint.setup({})
-lspconfig.gopls.setup({})
+vim.lsp.config("lua_ls", lua_ls_config)
+vim.lsp.config("astro", {})
+vim.lsp.config("tailwindcss", {})
+vim.lsp.config("eslint", {})
+vim.lsp.config("gopls", {})
 
--- patch lsp floating window with borders
-local orig = vim.lsp.util.open_floating_preview
-vim.lsp.util.open_floating_preview = function(contents, syntax, opts, ...)
-	opts = opts or {}
-	opts.border = opts.border
-		or {
-			{ "╭", "FloatBorder" },
-			{ "─", "FloatBorder" },
-			{ "╮", "FloatBorder" },
-			{ "│", "FloatBorder" },
-			{ "╯", "FloatBorder" },
-			{ "─", "FloatBorder" },
-			{ "╰", "FloatBorder" },
-			{ "│", "FloatBorder" },
-		}
-	return orig(contents, syntax, opts, ...)
-end
+vim.lsp.enable({ "lua_ls", "astro", "tailwindcss", "eslint", "gopls" })
