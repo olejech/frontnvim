@@ -5,5 +5,6 @@ vim.lsp.config("astro", {})
 vim.lsp.config("tailwindcss", {})
 vim.lsp.config("eslint", {})
 vim.lsp.config("gopls", {})
+vim.lsp.config("stylelint_lsp", {})
 
-vim.lsp.enable({ "lua_ls", "astro", "tailwindcss", "eslint", "gopls" })
+vim.lsp.enable({ "lua_ls", "astro", "tailwindcss", "eslint", "gopls", "stylelint_lsp" })
