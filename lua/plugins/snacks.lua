@@ -2,13 +2,18 @@ return {
 	picker = {
 		enabled = true,
 		sources = {
+			files = {
+				hidden = true,
+				ignored = true,
+				exclude = { "node_modules" },
+			},
 			explorer = {
 				auto_close = true,
 				hidden = true,
-				ignored = true,
+				ignored = false,
 			},
 			grep = {
-				glob = { "!package-lock.json" },
+				glob = { "!package-lock.json", "!node_modules/**" },
 			},
 		},
 		layouts = {
