@@ -4,6 +4,11 @@ return {
 		sources = {
 			explorer = {
 				auto_close = true,
+				hidden = true,
+				ignored = true,
+			},
+			grep = {
+				glob = { "!package-lock.json" },
 			},
 		},
 		layouts = {
