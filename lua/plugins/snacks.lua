@@ -5,7 +5,7 @@ return {
 			files = {
 				hidden = true,
 				ignored = true,
-				exclude = { "node_modules" },
+				exclude = { "node_modules", "dist", ".git", ".gitlab", "build", ".storybook", "lib" },
 			},
 			explorer = {
 				auto_close = true,
