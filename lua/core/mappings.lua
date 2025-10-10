@@ -44,7 +44,7 @@ vim.keymap.set("n", "<leader>9", "9gt")
 vim.keymap.set("n", "<leader>0", ":tabprev<cr>")
 vim.keymap.set("n", "<leader>be", ":bufdo e<cr>")
 
--- TODO: useless, remove -> Remap default behavior (langmapper break this behavior)
+-- Remap default behavior (langmapper break this behavior)
 vim.keymap.set("n", "/", "/", { noremap = true })
 vim.keymap.set("n", ".", ".", { noremap = true })
 
@@ -142,12 +142,6 @@ vim.keymap.set("n", "<leader>nc", quicknote.NewNoteAtCWD)
 vim.keymap.set("n", "<leader>nC", quicknote.NewNoteAtCurrentLine)
 vim.keymap.set("n", "<leader>no", quicknote.OpenNoteAtCurrentLine)
 vim.keymap.set("n", "<leader>nd", quicknote.DeleteNoteAtCurrentLine)
-vim.keymap.set("n", "<leader>nf", function()
-	snacks.picker.files({
-		dirs = { ".quicknote" },
-		formatters = { file = { filename_only = true } },
-	})
-end)
 vim.keymap.set("n", "<leader>nf", function()
 	snacks.picker.files({
 		dirs = { ".quicknote" },
