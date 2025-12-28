@@ -74,6 +74,8 @@ end)
 vim.keymap.set("n", "<leader>fg", snacks.picker.git_log_file)
 vim.keymap.set("n", "<leader>fl", snacks.picker.resume)
 vim.keymap.set("n", "<leader>fm", snacks.picker.marks)
+vim.keymap.set("n", "<leader>fd", snacks.picker.git_diff)
+vim.keymap.set("n", "<leader>fe", snacks.picker.git_status)
 
 -- Explorer
 

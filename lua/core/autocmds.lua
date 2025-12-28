@@ -69,15 +69,15 @@ end
 restore_cursor_on_yank()
 
 -- TODO: check it -> Auto reload files when changed externally
--- cmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
--- 	desc = "Check if buffer changed outside of vim",
--- 	group = augroup("auto_read", { clear = true }),
--- 	callback = function()
--- 		if vim.fn.mode() ~= "c" then
--- 			vim.cmd("checktime")
--- 		end
--- 	end,
--- })
+cmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
+	desc = "Check if buffer changed outside of vim",
+	group = augroup("auto_read", { clear = true }),
+	callback = function()
+		if vim.fn.mode() ~= "c" then
+			vim.cmd("checktime")
+		end
+	end,
+})
 
 -- Enable/disable autoformat
 vim.api.nvim_create_user_command("FormatDisable", function(args)

@@ -31,6 +31,3 @@ vim.opt.conceallevel = 2
 vim.opt.spell = true
 vim.opt.winborder = "rounded"
 vim.diagnostic.config({ signs = false })
-
--- Auto reload files when changed externally
-vim.opt.autoread = true
