@@ -16,8 +16,9 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 	{
 		"nvim-treesitter/nvim-treesitter",
+		branch = "main",
+		build = ":TSUpdate",
 		dependencies = { "JoosepAlviste/nvim-ts-context-commentstring" },
-		branch = "master",
 	},
 	{
 		"neovim/nvim-lspconfig",
@@ -53,6 +54,7 @@ require("lazy").setup({
 	},
 	{
 		"nvim-treesitter/nvim-treesitter-textobjects",
+		branch = "main",
 		event = "InsertEnter",
 	},
 	{
@@ -86,7 +88,6 @@ require("lazy").setup({
 	},
 	{
 		"davidmh/mdx.nvim",
-		config = true,
 		dependencies = { "nvim-treesitter/nvim-treesitter" },
 		lazy = false,
 	},
