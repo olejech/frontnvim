@@ -10,7 +10,7 @@ return {
 			explorer = {
 				auto_close = true,
 				hidden = true,
-				ignored = false,
+				ignored = true,
 			},
 			grep = {
 				glob = { "!package-lock.json", "!node_modules/**" },
