@@ -49,7 +49,7 @@ require("obsidian").setup({
 		folder = "Templates",
 	},
 	attachments = {
-		img_folder = "Files",
+		folder = "Files",
 	},
 	picker = {
 		name = "snacks.pick",
@@ -62,9 +62,6 @@ require("obsidian").setup({
 		blink = true,
 		min_chars = 2,
 	},
-	follow_url_func = function(url)
-		vim.fn.jobstart({ "open", url })
-	end,
 	note_id_func = function(title)
 		return title
 	end,
