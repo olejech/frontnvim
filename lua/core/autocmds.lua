@@ -28,7 +28,7 @@ local set_hl_for_floating_window = function()
 		link = "Normal",
 	})
 	vim.api.nvim_set_hl(0, "FloatBorder", {
-		bg = "none",
+		bg = "NONE",
 	})
 end
 set_hl_for_floating_window()
@@ -41,6 +41,7 @@ cmd("ColorScheme", {
 
 -- enable spell only for prose filetypes
 cmd("FileType", {
+	group = augroup("spell_prose", { clear = true }),
 	pattern = { "markdown", "text", "gitcommit", "NeogitCommitMessage" },
 	callback = function()
 		vim.opt_local.spell = true
@@ -48,11 +49,26 @@ cmd("FileType", {
 })
 
 -- disable set comment on new line
-vim.cmd("autocmd BufEnter * set formatoptions-=cro")
+cmd("BufEnter", {
+	group = augroup("no_comment_newline", { clear = true }),
+	callback = function()
+		vim.opt_local.formatoptions:remove({ "c", "r", "o" })
+	end,
+})
 
 -- show recording macros status
-vim.cmd("autocmd RecordingEnter * set cmdheight=1")
-vim.cmd("autocmd RecordingLeave * set cmdheight=0")
+cmd("RecordingEnter", {
+	group = augroup("recording_status", { clear = true }),
+	callback = function()
+		vim.opt.cmdheight = 1
+	end,
+})
+cmd("RecordingLeave", {
+	group = "recording_status",
+	callback = function()
+		vim.opt.cmdheight = 0
+	end,
+})
 
 -- restore cursor position on yank
 local function restore_cursor_on_yank()
@@ -67,6 +83,7 @@ local function restore_cursor_on_yank()
 	end, { expr = true })
 
 	vim.api.nvim_create_autocmd("TextYankPost", {
+		group = augroup("restore_cursor_yank", { clear = true }),
 		callback = function()
 			if vim.v.event.operator == "y" and cursorPreYank then
 				vim.api.nvim_win_set_cursor(0, cursorPreYank)
@@ -76,7 +93,7 @@ local function restore_cursor_on_yank()
 end
 restore_cursor_on_yank()
 
--- TODO: check it -> Auto reload files when changed externally
+-- update buffer on external changes
 cmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
 	desc = "Check if buffer changed outside of vim",
 	group = augroup("auto_read", { clear = true }),
