@@ -10,7 +10,7 @@ local is_fullscreen = false
 vim.g.mapleader = " "
 
 -- Custom
-vim.keymap.set("n", "<leader>w", ":silent! wa<cr>", { silent = true })
+vim.keymap.set("n", "<leader>w", "<cmd>silent! wa<cr>")
 vim.keymap.set("n", "<leader>W", "<cmd>noautocmd write<cr>")
 vim.keymap.set("n", "<leader>q", "<cmd>confirm q<cr>")
 -- vim.keymap.set("n", "|", "<cmd>vsplit<cr>")
@@ -32,17 +32,11 @@ vim.keymap.set("n", "=s", snacks.picker.spelling)
 -- vim.keymap.set("n", "L", "/[A-Z]<CR>")
 -- vim.keymap.set("n", "H", "?[A-Z]<CR>")
 -- vim.keymap.set("n", "<leader>df", ":windo diffthis<cr>")
-vim.keymap.set("n", "<leader>1", "1gt")
-vim.keymap.set("n", "<leader>2", "2gt")
-vim.keymap.set("n", "<leader>3", "3gt")
-vim.keymap.set("n", "<leader>4", "4gt")
-vim.keymap.set("n", "<leader>5", "5gt")
-vim.keymap.set("n", "<leader>6", "6gt")
-vim.keymap.set("n", "<leader>7", "7gt")
-vim.keymap.set("n", "<leader>8", "8gt")
-vim.keymap.set("n", "<leader>9", "9gt")
-vim.keymap.set("n", "<leader>0", ":tabprev<cr>")
-vim.keymap.set("n", "<leader>be", ":bufdo e<cr>")
+for i = 1, 9 do
+	vim.keymap.set("n", "<leader>" .. i, i .. "gt")
+end
+vim.keymap.set("n", "<leader>0", "<cmd>tabprev<cr>")
+vim.keymap.set("n", "<leader>be", "<cmd>bufdo e<cr>")
 
 -- Remap default behavior (langmapper break this behavior)
 vim.keymap.set("n", "/", "/", { noremap = true })
@@ -134,10 +128,10 @@ vim.keymap.set("n", "<C-s>f", function()
 end)
 
 -- Smart splits
-vim.keymap.set("n", "<C-l>", ":wincmd l<cr>", { silent = true })
-vim.keymap.set("n", "<C-k>", ":wincmd k<cr>", { silent = true })
-vim.keymap.set("n", "<C-j>", ":wincmd j<cr>", { silent = true })
-vim.keymap.set("n", "<C-h>", ":wincmd h<cr>", { silent = true })
+vim.keymap.set("n", "<C-l>", "<cmd>wincmd l<cr>")
+vim.keymap.set("n", "<C-k>", "<cmd>wincmd k<cr>")
+vim.keymap.set("n", "<C-j>", "<cmd>wincmd j<cr>")
+vim.keymap.set("n", "<C-h>", "<cmd>wincmd h<cr>")
 
 -- Quicknote
 vim.keymap.set("n", "<leader>nc", quicknote.NewNoteAtCWD)
@@ -178,7 +172,10 @@ end)
 vim.keymap.set("n", "<leader>zf", "<cmd>Obsidian quick_switch<cr>")
 vim.keymap.set("n", "<leader>zw", "<cmd>Obsidian search<cr>")
 vim.keymap.set("n", "<leader>zd", "<cmd>Obsidian follow_link<cr>")
-vim.keymap.set("n", "<leader>z|", ":vsplit<cr> :Obsidian follow_link<cr>")
+vim.keymap.set("n", "<leader>z|", function()
+	vim.cmd("vsplit")
+	vim.cmd("Obsidian follow_link")
+end)
 vim.keymap.set("n", "<leader>zc", obsidian.createNoteWithDefaultTemplate)
 vim.keymap.set("n", "<leader>zC", obsidian.createAnkiNoteWithDefaultTemplate)
 vim.keymap.set("n", "<leader>zb", "<cmd>Obsidian backlinks<cr>")
