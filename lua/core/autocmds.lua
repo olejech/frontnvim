@@ -12,7 +12,7 @@ vim.on_key(function(char)
 	end
 end, namespace("auto_hlsearch"))
 
--- Hightlight yanked text
+-- Highlight yanked text
 cmd("TextYankPost", {
 	desc = "Highlight yanked text",
 	group = augroup("highlightyank", { clear = true }),
@@ -37,6 +37,14 @@ cmd("ColorScheme", {
 	pattern = "*",
 	desc = "Avoid overwritten by loading color schemes later",
 	callback = set_hl_for_floating_window,
+})
+
+-- enable spell only for prose filetypes
+cmd("FileType", {
+	pattern = { "markdown", "text", "gitcommit", "NeogitCommitMessage" },
+	callback = function()
+		vim.opt_local.spell = true
+	end,
 })
 
 -- disable set comment on new line
