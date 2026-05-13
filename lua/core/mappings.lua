@@ -1,5 +1,4 @@
 local quicknote = require("quicknote")
--- local smart_splits = require("smart-splits")
 local gitsigns = require("gitsigns")
 local obsidian = require("plugins.obsidian-nvim")
 local neocodeium = require("neocodeium")
@@ -13,15 +12,9 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<leader>w", "<cmd>silent! wa<cr>")
 vim.keymap.set("n", "<leader>W", "<cmd>noautocmd write<cr>")
 vim.keymap.set("n", "<leader>q", "<cmd>confirm q<cr>")
--- vim.keymap.set("n", "|", "<cmd>vsplit<cr>")
--- vim.keymap.set("n", "\\", "<cmd>split<cr>")
 vim.keymap.set("n", "<leader>c", "<cmd>bd<cr>")
 vim.keymap.set("n", "<leader>bd", ":%bd!|e#<cr>")
--- vim.keymap.set("n", "<leader>bp", "<cmd>bp<cr>")
--- vim.keymap.set("n", "<leader>bn", "<cmd>bn<cr>")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
--- vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
--- vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv")
 vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "*", ":let @/='\\<' . expand('<cword>') . '\\>' | set hlsearch<CR>")
@@ -29,27 +22,14 @@ vim.keymap.set("n", "y<C-f>", function() -- copy relative path to file
 	vim.fn.setreg("+", vim.fn.expand("%"))
 end)
 vim.keymap.set("n", "=s", snacks.picker.spelling)
--- vim.keymap.set("n", "L", "/[A-Z]<CR>")
--- vim.keymap.set("n", "H", "?[A-Z]<CR>")
--- vim.keymap.set("n", "<leader>df", ":windo diffthis<cr>")
 for i = 1, 9 do
 	vim.keymap.set("n", "<leader>" .. i, i .. "gt")
 end
 vim.keymap.set("n", "<leader>0", "<cmd>tabprev<cr>")
-vim.keymap.set("n", "<leader>be", "<cmd>bufdo e<cr>")
 
 -- Remap default behavior (langmapper break this behavior)
 vim.keymap.set("n", "/", "/", { noremap = true })
 vim.keymap.set("n", ".", ".", { noremap = true })
-
--- Remap default annoying behavior
--- vim.keymap.set("n", "x", '"_x')
--- vim.keymap.set("n", "dd", function()
--- 	if vim.fn.getline(".") == "" then
--- 		return '"_dd'
--- 	end
--- 	return "dd"
--- end, { expr = true })
 
 -- Picker
 vim.keymap.set("n", "<leader>ff", function()
@@ -88,7 +68,7 @@ end)
 vim.keymap.set("n", "<leader>gp", gitsigns.preview_hunk)
 vim.keymap.set("n", "<leader>gh", gitsigns.reset_hunk)
 vim.keymap.set("n", "<leader>gr", gitsigns.reset_buffer)
--- vim.keymap.set("n", "<leader>gd", gitsigns.diffthis)
+vim.keymap.set("n", "<leader>gd", gitsigns.diffthis)
 
 -- LSP
 vim.keymap.set("n", "<leader>lR", vim.lsp.buf.rename)
@@ -107,12 +87,6 @@ vim.keymap.set("n", "<leader>jf", "<cmd>JestFile<cr>")
 -- Resize
 vim.keymap.set("n", "<C-s>k", "<cmd>resize -20<cr>")
 vim.keymap.set("n", "<C-s>j", "<cmd>resize +20<cr>")
--- vim.keymap.set("n", "<C-s>h", function()
--- 	smart_splits.resize_left(40)
--- end)
--- vim.keymap.set("n", "<C-s>l", function()
--- 	smart_splits.resize_right(40)
--- end
 vim.keymap.set("n", "<C-s>h", "<cmd>vertical resize -20<cr>")
 vim.keymap.set("n", "<C-s>l", "<cmd>vertical resize +20<cr>")
 
