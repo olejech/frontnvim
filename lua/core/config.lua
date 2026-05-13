@@ -1,11 +1,11 @@
 vim.opt.termguicolors = true
-vim.wo.number = true
-vim.wo.relativenumber = true
+vim.opt.number = true
+vim.opt.relativenumber = true
 vim.opt.showmode = false
 vim.opt.updatetime = 300
-vim.wo.signcolumn = "yes"
+vim.opt.signcolumn = "yes"
 vim.opt.scrolloff = 8
-vim.wo.linebreak = true
+vim.opt.linebreak = true
 vim.opt.virtualedit = "block"
 vim.opt.undofile = true
 vim.opt.mouse = "a"
@@ -24,10 +24,14 @@ vim.opt.winbar = "%f%m"
 vim.opt.pumheight = 10
 vim.opt.cursorline = true
 vim.cmd.language("en_US")
-vim.opt.spelllang = "ru_ru,en_us"
+vim.opt.spelllang = "ru,en_us"
 vim.opt.fillchars = { eob = " " }
 vim.opt.wrap = true
 vim.opt.conceallevel = 2
-vim.opt.spell = true
 vim.opt.winborder = "rounded"
-vim.diagnostic.config({ signs = false })
+vim.diagnostic.config({
+	signs = false,
+	virtual_text = true,
+	underline = true,
+	update_in_insert = false,
+})
