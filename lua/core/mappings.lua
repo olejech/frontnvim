@@ -3,6 +3,7 @@ local gitsigns = require("gitsigns")
 local obsidian = require("plugins.obsidian-nvim")
 local neocodeium = require("neocodeium")
 local snacks = require("snacks")
+local smart_splits = require("smart-splits")
 
 local is_fullscreen = false
 
@@ -101,11 +102,11 @@ vim.keymap.set("n", "<C-s>f", function()
 	end
 end)
 
--- Smart splits
-vim.keymap.set("n", "<C-l>", "<cmd>wincmd l<cr>")
-vim.keymap.set("n", "<C-k>", "<cmd>wincmd k<cr>")
-vim.keymap.set("n", "<C-j>", "<cmd>wincmd j<cr>")
-vim.keymap.set("n", "<C-h>", "<cmd>wincmd h<cr>")
+-- Smart splits (switch between windows and panes in tmux)
+vim.keymap.set("n", "<C-l>", smart_splits.move_cursor_right)
+vim.keymap.set("n", "<C-k>", smart_splits.move_cursor_up)
+vim.keymap.set("n", "<C-j>", smart_splits.move_cursor_down)
+vim.keymap.set("n", "<C-h>", smart_splits.move_cursor_left)
 
 -- Quicknote
 vim.keymap.set("n", "<leader>nc", quicknote.NewNoteAtCWD)
