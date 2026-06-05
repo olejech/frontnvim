@@ -16,9 +16,12 @@ local function createNoteWithDefaultTemplate(isAnkiNote)
 		title = FLASHCARDS_PATH .. title
 	end
 
+	local template = isAnkiNote and TEMPLATE_ANKI_FILENAME or TEMPLATE_FILENAME
+
 	local note = Note.create({
-		title = title,
-		should_write = false,
+		id = title,
+		template = template,
+		should_write = true,
 	})
 
 	if not note then
@@ -26,12 +29,6 @@ local function createNoteWithDefaultTemplate(isAnkiNote)
 	end
 
 	note:open({ sync = true })
-
-	if isAnkiNote then
-		vim.cmd("Obsidian template " .. TEMPLATE_ANKI_FILENAME)
-	else
-		vim.cmd("Obsidian template " .. TEMPLATE_FILENAME)
-	end
 end
 
 require("obsidian").setup({
@@ -63,7 +60,10 @@ require("obsidian").setup({
 		min_chars = 2,
 	},
 	note_id_func = function(title)
-		return title
+		if title ~= nil and title ~= "" then
+			return title
+		end
+		return tostring(os.time())
 	end,
 	legacy_commands = false,
 })
