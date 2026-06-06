@@ -11,6 +11,20 @@ return {
 				auto_close = true,
 				hidden = true,
 				ignored = true,
+				actions = {
+					-- native vim "/" search inside the list, no filtering
+					search_list = function()
+						vim.api.nvim_feedkeys("/", "n", false)
+					end,
+				},
+				-- native vim "/" search inside the list, no filtering
+				win = {
+					list = {
+						keys = {
+							["/"] = "search_list",
+						},
+					},
+				},
 			},
 			grep = {
 				glob = { "!package-lock.json", "!node_modules/**" },
