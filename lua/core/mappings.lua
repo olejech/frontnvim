@@ -51,6 +51,9 @@ vim.keymap.set("n", "<leader>fl", snacks.picker.resume)
 vim.keymap.set("n", "<leader>fm", snacks.picker.marks)
 vim.keymap.set("n", "<leader>fd", snacks.picker.git_diff)
 vim.keymap.set("n", "<leader>fe", snacks.picker.git_status)
+vim.keymap.set("n", "<leader>hm", function()
+	vim.cmd.edit(vim.fs.joinpath(vim.fn.stdpath("config"), "lua", "core", "mappings.lua"))
+end)
 
 -- Explorer
 
