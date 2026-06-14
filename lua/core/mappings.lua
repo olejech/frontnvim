@@ -146,7 +146,14 @@ end)
 -- Obsidian.nvim
 vim.keymap.set("n", "<leader>zf", "<cmd>Obsidian quick_switch<cr>")
 vim.keymap.set("n", "<leader>zw", "<cmd>Obsidian search<cr>")
-vim.keymap.set("n", "<leader>zd", "<cmd>Obsidian follow_link<cr>")
+vim.keymap.set("n", "<leader>zd", function()
+	local url = vim.fn.expand("<cfile>")
+	if url:match("^https?://") then
+		vim.fn.jobstart({ "open", url }, { detach = true })
+	else
+		vim.cmd("Obsidian follow_link")
+	end
+end)
 vim.keymap.set("n", "<leader>z|", function()
 	vim.cmd("vsplit")
 	vim.cmd("Obsidian follow_link")
